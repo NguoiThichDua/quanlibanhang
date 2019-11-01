@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+}
+
+body{
+    background-image: url("background.jpg");
+    background-attachment:fixed;
+	background-position:center;	
+	background-size:cover;
+    background-origin:border-box;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 767px){
+    a.dangxuat{
+        font-size: 10px;
+        margin-top: 30px;
+    }
+}

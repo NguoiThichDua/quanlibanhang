@@ -28,7 +28,7 @@
                     case 'dangnhapthanhcong':
                     ?>
                         <div class="alert alert-success alert-dismissible fade show rounded-pill" role="alert" id="message" >
-                            <strong>Thành công</strong> chào mừng bạn đã quay trở lại..!
+                            <strong>Thành công!</strong> bạn đang đăng nhập với tài khoản quản trị..!
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>

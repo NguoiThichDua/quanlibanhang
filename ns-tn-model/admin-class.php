@@ -28,5 +28,23 @@
                 return NULL;
             }
         }
+
+        # lấy thông tin của 1 tài khoản admin bằng tên tài khoản
+        public function LayThongTinAdminBangTen($tentaikhoan){
+            $admin = $this->connect->prepare("SELECT * FROM admin WHERE tentaikhoan=?");
+			$admin->setFetchMode(PDO::FETCH_OBJ);
+			$admin->execute(array($tentaikhoan));
+			$list = $admin->fetch(); 
+			return $list;
+        }
+
+        # lấy thông tin của 1 tài khoản admin bằng mã tài khoản
+        public function LayThongTinAdminBangMa($maadmin){
+            $admin = $this->connect->prepare("SELECT * FROM admin WHERE maadmin=?");
+			$admin->setFetchMode(PDO::FETCH_OBJ);
+			$admin->execute(array($maadmin));
+			$list = $admin->fetch(); 
+			return $list;
+        }
     }
 ?>

@@ -2,10 +2,12 @@
     if(isset($_SESSION['admin'])){
        ?>
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
+            <!-- LOGO -->
             <div class="position-absolute" style="z-index: 999; left: 10px">       
                 <a class="btn btn-outline-brown dangxuat rounded-pill" href="ns-tn-controller/admin-controller.php?yeucau=dangxuat">Đăng Xuất</a>
             </div>
 
+            <!-- TIEU DE -->
             <div class="text-center">
                 <h4><strong><b>N'Store By Thanh Nhi</b></strong></h4>
             </div>
@@ -36,7 +38,7 @@
                         </div>
                       
                         <div class="card-body">
-                            <h3 class="card-title text-center text-dark title-qlad"><strong>QLÍ NHÀ PHÂN PHỐI</strong></h3>
+                            <h3 class="card-title text-center text-dark title-qlad"><strong>Q.LÍ NHÀ PHÂN PHỐI</strong></h3>
                         </div>
                     </div>
                 </a>
@@ -61,7 +63,7 @@
     }else{
         ?>
             <div class="alert alert-danger" role="alert">
-            Lỗi... Không thể lấy thông tin tài khoản admin...!
+                Lỗi... Không tìm thấy thông tin tài khoản admin...!
             </div>
         <?php
     }

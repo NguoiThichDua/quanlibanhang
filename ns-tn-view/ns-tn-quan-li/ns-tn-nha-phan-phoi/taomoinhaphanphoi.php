@@ -14,14 +14,14 @@
               
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3">
                 <div class="card p-3">
-                    <form action="ns-tn-controler/admin-controller?yeucau=themnhaphanphoi" method="POST">
+                    <form action="ns-tn-controller/nha-phan-phoi-controller.php?yeucau=themnhaphanphoi" method="POST">
                         <div class="form-group">
                             <label for=""><b>Họ và tên:</b> (<span class="need">*</span>)</label>
                             <input type="text" name="hovaten" class="form-control rounded-pill" title="Không được bỏ rỗng trường này" required>
                         </div>
                         <div class="form-group">
                             <label for=""><b>Số điện thoại:</b> (<span class="need">*</span>)</label>
-                            <input type="text" name="sodienthoai" class="form-control rounded-pill" title="Không được bỏ rỗng trường này" required>
+                            <input type="number" name="sodienthoai" class="form-control rounded-pill" title="Không được bỏ rỗng trường này" required>
                         </div>
                         <div class="form-group">
                             <label for=""><b>Địa chỉ:</b> (<span class="need">*</span>)</label>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="form-group">
                             <label for=""><b>CMND:</b> (<span class="need">*</span>)</label>
-                            <input type="text" name="cmnd" class="form-control rounded-pill" title="Không được bỏ rỗng trường này" required>
+                            <input type="number" name="cmnd" class="form-control rounded-pill" title="Không được bỏ rỗng trường này" required>
                         </div>
                         <div class="form-group">
                             <label for=""><b>Trực thuộc:</b>(<span class="need">*</span>)</label>
@@ -55,16 +55,16 @@
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3">
                 <div class="card p-3">
                     <div class="form-group">
-                            <label for=""><b>Mã hợp đồng:</b> (<span class="need">*</span>)</label>
-                            <input type="text" name="mahopdong" class="form-control rounded-pill" title="Không được bỏ rỗng trường này" required>
+                            <label for=""><b>Mã hợp đồng:</b></label>
+                            <input type="text" name="mahopdong" class="form-control rounded-pill" title="Có thể bỏ trống">
                         </div>
                         <div class="form-group">
-                            <label for=""><b>Mã cửa hàng: </b>(<span class="need">*</span>)</label>
-                            <input type="text" name="macuahang" class="form-control rounded-pill" title="Không được bỏ rỗng trường này" required>
+                            <label for=""><b>Mã cửa hàng: </b></label>
+                            <input type="text" name="macuahang" class="form-control rounded-pill" title="Có thể bỏ trống">
                         </div>
                         <div class="form-group">
-                            <label for=""><b>Hệ thống phân phối:</b> (<span class="need">*</span>)</label>
-                            <input type="text" name="hethongphanphoi" class="form-control rounded-pill" title="Không được bỏ rỗng trường này" required>
+                            <label for=""><b>Hệ thống nhà phân phối:</b></label>
+                            <input type="text" name="hethongnhaphanphoi" class="form-control rounded-pill" title="Có thể bỏ trống">
                         </div>
 
                         <div class="form-group">
@@ -83,6 +83,12 @@
             </div>
         </div>      
         <?php
+    }else{
+        ?>
+            <div class="alert alert-danger" role="alert">
+                Lỗi... Không tìm thấy thông tin tài khoản admin...!
+            </div>
+        <?php
     }
-    ?>
+?>
         

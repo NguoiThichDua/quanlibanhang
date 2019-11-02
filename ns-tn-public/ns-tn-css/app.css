@@ -22,9 +22,18 @@ div .card{
     color: red;
 }
 
-@media only screen and (max-width: 767px){
+.bg-custom{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+@media only screen and (max-width: 768px){
     a.dangxuat{
-        font-size: 10px;
+        font-size: 15px;
+        margin-top: 30px;
+    }
+
+    .form-them-khach{
         margin-top: 30px;
     }
 }

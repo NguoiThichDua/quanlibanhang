@@ -13,7 +13,7 @@
             </div>
               
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3">
-                <div class="card p-3">
+                <div class="card p-3 form-them-khach bg-custom">
                     <form action="ns-tn-controller/nha-phan-phoi-controller.php?yeucau=themnhaphanphoi" method="POST">
                         <div class="form-group">
                             <label for=""><b>Họ và tên:</b> (<span class="need">*</span>)</label>
@@ -53,7 +53,7 @@
             </div>
 
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3">
-                <div class="card p-3">
+                <div class="card p-3 bg-custom">
                     <div class="form-group">
                             <label for=""><b>Mã hợp đồng:</b></label>
                             <input type="text" name="mahopdong" class="form-control rounded-pill" title="Có thể bỏ trống">
@@ -69,12 +69,18 @@
 
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <input type="reset" class="btn btn-danger" value="Xóa các dữ liệu trên">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3">
+                                    <input type="reset" class="btn btn-danger" value="Làm trống">
                                 </div>
-                                <div class="col-md-6 d-flex justify-content-end">
-                                    <a href="index.php?page=quanlinhaphanphoi" class="btn btn-warning mr-3">Hủy bỏ</a>
-                                    <input type="submit" value="Thêm mới" class="btn btn-success">
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3">
+                                  
+                                   
+                                
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <a href="index.php?page=quanlinhaphanphoi" class="btn btn-warning">Hủy bỏ</a>
+                                        <input type="submit" value="Thêm mới" class="btn btn-success">
+                                    </div>
+                                                                    
                                 </div>
                             </div>
                         </div>

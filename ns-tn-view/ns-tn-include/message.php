@@ -55,6 +55,16 @@
                         </div>
                     <?php
                     break;
+                    case 'suathanhcong':
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show rounded-pill" role="alert" id="message" >
+                            <strong>Thành công!</strong> đã sửa..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <?php
+                    break;
                 }
             }else{
 

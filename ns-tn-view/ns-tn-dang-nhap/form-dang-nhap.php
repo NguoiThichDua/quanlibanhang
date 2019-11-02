@@ -15,8 +15,8 @@
 
     <div class="form-group inputBox">
         <div class="input-group eye">
-            <input type="password" name="matkhau" aria-label="" aria-describedby="basic-addon2" id="" required  title="Không được để trống mật khẩu">
-            <img src="ns-tn-public/ns-tn-images/default/eye.png" class=" " onclick="showpassdangnhap()" id="basic-addon2" alt="" width="30px" height="30px">
+            <input type="password" name="matkhau" id="password" aria-label="" aria-describedby="basic-addon2" id="" required  title="Không được để trống mật khẩu">
+            <img src="ns-tn-public/ns-tn-images/default/eye.png" class=" " onclick="ShowPass()" id="basic-addon2" alt="" width="30px" height="30px">
             <label for="" class="text-dark"><b>Mật khẩu</b></label>
         </div>
     </div>

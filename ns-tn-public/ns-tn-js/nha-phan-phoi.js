@@ -1,3 +1,4 @@
+/* Xem thêm những thông tin của nhà phân phối */
 function XemThemThongTin(hovaten, mahopdong, macuahang, hethongnhaphanphoi, danghi, tenadmin,ngaytao){
     var xem_hovaten = hovaten;
     var xem_mahopdong = mahopdong;
@@ -20,4 +21,14 @@ function XemThemThongTin(hovaten, mahopdong, macuahang, hethongnhaphanphoi, dang
     document.getElementById("xem_danghi").innerHTML = xem_danghi;
     document.getElementById("xem_tenadmin").innerHTML = xem_tenadmin;
     document.getElementById("xem_ngaytao").innerHTML = xem_ngaytao;
+}
+
+function TimKhachHang(){
+    $(document).ready(function() {
+        var tenkhach = document.getElementById("tenkhachtim").value.trim();
+        var sodienthoai = document.getElementById("sodienthoaikhachtim").value.trim();
+      
+        $("#bangloc").load("ns-tn-view/ns-tn-quan-li/ns-tn-nha-phan-phoi/boloc.php" , {tenkhach: tenkhach, sodienthoai: sodienthoai}); 
+      
+   });
 }

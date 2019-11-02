@@ -15,11 +15,14 @@
                     require "ns-tn-quan-li/ns-tn-nha-phan-phoi/index.php";
                 break;
                 case 'taomoinhaphanphoi':
-                    require "ns-tn-quan-li/ns-tn-nha-phan-phoi/taomoinhaphanphoi.php";
+                    require "ns-tn-quan-li/ns-tn-nha-phan-phoi/tao-moi-nha-phan-phoi.php";
                 break;
-                
+                case 'suanhaphanphoi':
+                    require "ns-tn-quan-li/ns-tn-nha-phan-phoi/sua-nha-phan-phoi.php";
+                break;
+                   
                 default:
-                    # code...
+                    require "ns-tn-include/404.php";
                 break;
             }
         }else{

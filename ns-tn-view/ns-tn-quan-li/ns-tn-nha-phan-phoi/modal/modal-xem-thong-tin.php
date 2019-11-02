@@ -1,41 +1,31 @@
 <!-- MODAL XEM THONG TIN NHA PHAN PHOI -->
-<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+<div class="modal fade" id="xemthongtinchitiet" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle"><div id="xem_tenkhachhang"></div></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
+            <div class="modal-header bg-browns text-light">
+                <h5 class="modal-title" id="exampleModalCenterTitle"><div id="xem_tenkhachhang"></div></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
             <div class="modal-body">
-                <table class="table table-hover">
-                    <thead class="bg-browns text-light">
-                        <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Mã hợp đồng</th>
-                        <th scope="col">Mã cửa hàng</th>
-                        <th scope="col">HT NPP</th>
-                        <th scope="col">Còn bán</th>
-                        <th scope="col">Người tạo</th>
-                        <th scope="col">Ngày tạo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td id="xem_mahopdong"></td>
-                            <td id="xem_macuahang"></td>
-                            <td id="xem_hethongnhaphanphoi"></td>
-                            <td id="xem_danghi"></td>
-                            <td id="xem_tenadmin"></td>
-                            <td id="xem_ngaytao"></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="form-group">
+                    <label for=""><b>Mã hợp đồng:</b></label>
+                    <div class="form-control rounded-pill" id="xem_mahopdong" readonly></div>
+                    <label for=""><b>Mã cửa hàng:</b></label>
+                    <div class="form-control rounded-pill" id="xem_macuahang" readonly></div>
+                    <label for=""><b>HT NPP:</b></label>
+                    <div class="form-control rounded-pill" id="xem_hethongnhaphanphoi" readonly></div>
+                    <label for=""><b>Còn bán:</b></label>
+                    <div class="form-control rounded-pill" id="xem_danghi" readonly></div>
+                    <label for=""><b>Người tạo:</b></label>
+                    <div class="form-control rounded-pill" id="xem_tenadmin" readonly></div>
+                    <label for=""><b>Ngày tạo:</b></label>
+                    <div class="form-control rounded-pill" id="xem_ngaytao" readonly></div>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-outline-brown" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-brown text-light" data-dismiss="modal">Đóng</button>
             </div>
         </div>
     </div>

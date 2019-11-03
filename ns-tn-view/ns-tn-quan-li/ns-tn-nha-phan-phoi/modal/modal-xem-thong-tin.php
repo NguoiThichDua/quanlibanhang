@@ -1,4 +1,4 @@
-<!-- MODAL XEM THONG TIN NHA PHAN PHOI -->
+<!-- MODAL XEM THEM THONG TIN NHA PHAN PHOI -->
 <div class="modal fade" id="xemthongtinchitiet" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">

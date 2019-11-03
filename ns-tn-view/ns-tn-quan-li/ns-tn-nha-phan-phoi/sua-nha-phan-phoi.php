@@ -17,18 +17,20 @@
         }else{
             ?>
                 <div class="row">
+                    <!-- TITLE -->
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
                         <div class="position-absolute" style="z-index: 999; left: 10px">       
                             <a class="btn btn-outline-brown dangxuat rounded-pill" href="index.php?page=quanlinhaphanphoi">Trở Về</a>
                         </div>
             
                         <div class="text-center">
-                            <h4><strong><b>Tạo Mới Nhà Phân Phối</b></strong></h4>
+                            <h4><strong><b>Sửa Nhà Phân Phối</b></strong></h4>
                         </div>
-                    </div>
+                    </div>  <!-- END TITLE -->
                     
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3">
-                        <div class="card p-3 bg-custom">
+                        <!-- FORM SUA -->
+                        <div class="card p-3 form-sua-khach bg-custom">
                             <form action="ns-tn-controller/nha-phan-phoi-controller.php?yeucau=suanhaphanohoi" method="POST">
                                 <div class="form-group">
                                     <input type="text" name="makhachhang" value="<?php echo $thongtin->makhachhang; ?>" class="form-control rounded-pill d-none" title="Không được bỏ rỗng trường này" required readonly>
@@ -91,17 +93,13 @@
                                 </div>
 
                                 <div class="form-group d-flex justify-content-end">
-                                   
-                                        <!-- <div class="col-md-6">
-                                            <input type="reset" class="btn btn-danger" value="Xóa các dữ liệu trên">
-                                        </div> -->
-                                       
-                                        <a href="index.php?page=quanlinhaphanphoi" class="btn btn-warning mr-3">Hủy bỏ</a>
-                                        <input type="submit" value="Sửa thông tin" class="btn btn-success">
-                                       
+                                    <a href="index.php?page=quanlinhaphanphoi" class="btn btn-warning mr-3">Hủy bỏ</a>
+                                    <input type="submit" value="Sửa thông tin" class="btn btn-success">
                                     </div>
                                 </div>
-                            </form>
+                            </form>     <!-- END FORM SUA-->
+
+                            <!-- THONG TIN NGUOI CAP NHAT -->
                             <div class="jumbotron mt-3 p-3" style="border-radius: 30px">
                                 <?php 
                                     $admin = new adminclass();
@@ -109,14 +107,12 @@
                                 ?>
                                 <label for=""><b>Ngày sửa:</b></label><span><?php echo " " . $thongtin->ngaysua ?></span> <br>
                                 <label for=""><b>Người sửa:</b></label><span><?php if($thongtinadmin != NULL || $thongtinadmin != "") echo " " . $thongtinadmin->hovaten ?></span>
-                            </div>
+                            </div>  <!-- END THONG TIN NGUOI CAP NHAT -->
                         </div>
                     </div>
                 </div>    
             <?php
         }
-            
-
     }else{
         # Không tìm thấy tài khoản được GET qua
     ?>

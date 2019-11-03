@@ -69,7 +69,6 @@
                     $tructhuoc = trim($_POST['tructhuoc']);
                     $capbac = trim($_POST['capbac']);
                     $danghi = trim($_POST['danghi']);
-                    
 
                     if(strlen($hovaten) <= 0 || strlen($sodienthoai) <= 0 || strlen($diachi) <= 0 || strlen($cmnd) <= 0 || strlen($tructhuoc) <= 0 || strlen($capbac) <= 0){
                         header("Location: ../index.php?page=suanhaphanphoi&id=$makhachhang&ketqua=thongtinrong");
@@ -100,13 +99,11 @@
                             $nhaphanphoi-> SuaNhaPhanPhoiVaCuaHang($hovaten, $sodienthoai, $cmnd, $diachi, $capbac, $tructhuoc, $mahopdong, $macuahang, $hethongnhaphanphoi, $loaikhachhang, 0 , $danghi, $ngaysua, $maadminsua, $makhachhang);
                             header("Location: ../index.php?page=suanhaphanphoi&id=$makhachhang&ketqua=suathanhcong");
                         }
-                       
                     }
                 }else{
                     # không nhận được dữ liệu POST qua
                     header("Location: ../index.php?page=quanlinhaphanphoi&ketqua=thongtinrong");
                 }
-
             break;
             default:
                 # code...

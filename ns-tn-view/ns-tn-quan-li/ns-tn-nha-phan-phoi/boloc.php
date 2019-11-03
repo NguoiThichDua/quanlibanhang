@@ -7,6 +7,7 @@
         $tenkhach = trim($_REQUEST['tenkhach']);
         $sodienthoai = trim($_REQUEST['sodienthoai']);
 
+            # tìm kiếm
             $khachhang = new nhaphanphoiclass();
             $thongtin = $khachhang->TimNhaPhanPhoiTheoTenVaSoDienThoai($tenkhach, $sodienthoai);
             ?>
@@ -30,6 +31,7 @@
                     <?php
                         $stt = 1;
                     
+                        # hiển thị thông tin tìm được
                         foreach ($thongtin as $tt) {
                             $admin = new adminclass();
                             $thongtinadmin = $admin->LayThongTinAdminBangMa($tt->maadmin);

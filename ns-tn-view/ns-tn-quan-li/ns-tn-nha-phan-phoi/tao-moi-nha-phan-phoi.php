@@ -2,6 +2,7 @@
     if(isset($_SESSION['admin'])){
         ?>
         <div class="row">
+            <!-- TITLE -->
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
                 <div class="position-absolute" style="z-index: 999; left: 10px">       
                     <a class="btn btn-outline-brown dangxuat rounded-pill" href="index.php?page=quanlinhaphanphoi">Trở Về</a>
@@ -10,10 +11,11 @@
                 <div class="text-center">
                     <h4><strong><b>Tạo Mới Nhà Phân Phối</b></strong></h4>
                 </div>
-            </div>
+            </div>  <!-- END TITLE -->
               
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3">
                 <div class="card p-3 form-them-khach bg-custom">
+                    <!-- FORM THEM -->
                     <form action="ns-tn-controller/nha-phan-phoi-controller.php?yeucau=themnhaphanphoi" method="POST">
                         <div class="form-group">
                             <label for=""><b>Họ và tên:</b> (<span class="need">*</span>)</label>
@@ -73,18 +75,14 @@
                                     <input type="reset" class="btn btn-danger" value="Làm trống">
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3">
-                                  
-                                   
-                                
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <a href="index.php?page=quanlinhaphanphoi" class="btn btn-warning">Hủy bỏ</a>
                                         <input type="submit" value="Thêm mới" class="btn btn-success">
-                                    </div>
-                                                                    
+                                    </div>                     
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    </form>     <!-- END FORM THEM -->
                 </div>
             </div>
         </div>      

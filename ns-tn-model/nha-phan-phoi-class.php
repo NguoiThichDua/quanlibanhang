@@ -13,8 +13,8 @@
     require $file;
   
     class nhaphanphoiclass extends databaseNhaPhanPhoi{
-         # lấy tất cả nhà phân phối lâu năm
-         public function LayTatCaNhaPhanPhoiLauNam(){
+        # lấy tất cả nhà phân phối lâu năm
+        public function LayTatCaNhaPhanPhoiLauNam(){
             $khachhang = $this->connect->prepare('SELECT * FROM khachhang WHERE khachhang.loaikhachhang = "khachlaunam" ORDER BY khachhang.ngaytao DESC');
             $khachhang->setFetchMode(PDO::FETCH_OBJ);
             $khachhang->execute();
@@ -38,8 +38,8 @@
             $themMoi->execute(array($hovaten, $sodienthoai, $cmnd, $diachi, $capbac, $tructhuoc, $mahopdong, $macuahang, $hethongnhaphanphoi, $loaikhachhang, $maadmin, $ngaytao));
         }
 
-         # sửa một nhà phân phối mới và cửa hàng nếu có
-         public function SuaNhaPhanPhoiVaCuaHang($hovaten, $sodienthoai, $cmnd, $diachi, $capbac, $tructhuoc, $mahopdong, $macuahang, $hethongnhaphanphoi, $loaikhachhang, $maadmin, $danghi, $ngaysua, $maadminsua, $makhachhang){
+        # sửa một nhà phân phối mới và cửa hàng nếu có
+        public function SuaNhaPhanPhoiVaCuaHang($hovaten, $sodienthoai, $cmnd, $diachi, $capbac, $tructhuoc, $mahopdong, $macuahang, $hethongnhaphanphoi, $loaikhachhang, $maadmin, $danghi, $ngaysua, $maadminsua, $makhachhang){
             $cauLenh = ' UPDATE khachhang SET hovaten = ?, sodienthoai = ?, cmnd = ?, diachi = ?, capbac = ?, tructhuoc = ?, mahopdong = ?, macuahang = ?, hethongnhaphanphoi = ?, loaikhachhang = ?, maadmin = ?, danghi = ?, ngaysua = ? , maadminsua = ? WHERE khachhang.makhachhang = ?';
             $themMoi = $this->connect->prepare($cauLenh);
             $themMoi->execute(array($hovaten, $sodienthoai, $cmnd, $diachi, $capbac, $tructhuoc, $mahopdong, $macuahang, $hethongnhaphanphoi, $loaikhachhang, $maadmin, $danghi, $ngaysua, $maadminsua, $makhachhang));

@@ -18,6 +18,7 @@
 
             <div class="">
                 <div class="row">
+                    <!-- MENU -->
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3">
                         <a href="index.php?page=taomoinhaphanphoi" class=" btn btn-success">Tạo nhà phân phối</a>
                     </div>
@@ -25,11 +26,12 @@
                         <button class=" btn btn-secondary text-light" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                             Tìm nhà phân phối
                         </button>
-                    </div>
+                    </div>  <!-- END MENU -->
                 </div>
             </div>
 
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3">
+                <!-- TIM KIEM -->
                 <div class="collapse card bg-custom" id="collapseExample">
                     <div class="card-header bg-browns text-light" style="border-radius: 30px 30px 0 0">
                         <h6><strong><b>Tìm kiếm</b></strong></h6>
@@ -46,10 +48,11 @@
                             </div>  
                         </div>           
                     </div>
-                </div>
+                </div>  <!-- END TIM KIEM -->
             </div>
 
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-3">
+                <!-- TABLE -->
                 <div class="table-responsive-lg" id="bangloc">
                     <!-- TABLE -->
                     <table class="table table-hover table-bordered table-sm table-light text-center">

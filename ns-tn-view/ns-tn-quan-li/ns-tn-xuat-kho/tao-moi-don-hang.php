@@ -29,8 +29,8 @@
                         ?>
                         <marquee behavior="alternate">Bạn đang tạo đơn hàng cho nhà phân phối: <b><u><?php echo "  " . $thongtin->hovaten;?></u></b></marquee>
                             <div class="row">
-                                <div class="col-6 col-sm-6 col-md-6">
-                                    <div class="card bg-custom">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                    <div class="card bg-custom pb-3 mb-3">
                                         <div class="card-header bg-browns text-light" style="border-radius: 30px 30px 0 0">1. Thêm hàng hóa - Số lượng - Ngày sản xuất</div>
                                         <div class="card-body">
                                             <form action="ns-tn-controller/xuat-kho-controller.php?yeucau=themhanghoavasoluong" method="post">
@@ -81,7 +81,7 @@
                                 </div>  <!-- END THEM HANG HOA VA SO LUONG -->
 
                                 <!-- GIO HANG -->
-                                <div class="col-6 col-sm-6 col-md-6">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                                     <div class="card bg-custom">
                                         <div class="card-header bg-browns text-light" style="border-radius: 30px 30px 0 0">
                                             2. Giỏ hàng
@@ -154,17 +154,21 @@
             ?>
             </div>
 
-                <div class="col-12 col-sm-12 col-md-6 mt-3">
-                    <div class="card p-3 bg-custom">
-                        <label for=""><b>Nhập số điện thoại cần thêm đơn hàng: </b></label>
-                        <input type="number" class="form-control rounded-pill" id="sodienthoaithemdonhang" onkeyup="SoDienThoaiThemDonHang()">
+                <div class="col-12 col-sm-12 col-md-12 mt-3 d-flex justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card p-3 bg-custom">
+                            <label for=""><b>Thêm đơn hàng: </b></label>
+                            <input type="number" class="form-control rounded-pill" placeholder="Nhập số điện thoại" id="sodienthoaithemdonhang" onkeyup="SoDienThoaiThemDonHang()">
+                        </div>
                     </div>
                 </div>
                 
                 <!-- load dữ liệu từ xuat-kho.js để tìm thông tin khách => tạo đơn hàng mới-->
-                <div class="col-12 col-sm-12 col-md-6 mt-3">
-                    <div class="" id="thongtinkhachthem">
-                
+                <div class="col-12 col-sm-12 col-md-12 mt-3 d-flex justify-content-center">
+                    <div class="col-md-6">
+                        <div class="" id="thongtinkhachthem">
+                    
+                        </div>
                     </div>
                 </div>
         </div>      
@@ -181,7 +185,4 @@
     require "modal/modal-sua-don-hang.php";
     require "modal/modal-huy-don-hang.php";
 ?>
-
-
-        
 

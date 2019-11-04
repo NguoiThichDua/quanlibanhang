@@ -41,3 +41,25 @@ div .card{
         margin-top: 30px;
     }
 }
+
+@media only screen and (max-width: 768px){
+    a.dangxuat{
+        font-size: 15px;
+        margin-top: 30px;
+    }
+
+    .form-them-khach{
+        margin-top: 30px;
+    }
+
+    .form-sua-khach{
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    marquee{
+        margin-top: 15px;
+    }
+}
+

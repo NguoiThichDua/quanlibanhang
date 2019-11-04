@@ -17,7 +17,7 @@
                         <input type="text" name="mabill" class="form-control rounded-pill" required>
 
                         <label for=""><b>Ghi chú:</b> </label>
-                        <textarea name="ghichu" class="form-control rounded-pill"></textarea>
+                        <textarea name="ghichu" class="form-control" placeholder="Có thể bỏ trống ghi chú" style="border-radius: 30px"></textarea>
                     </div>
 
                     <div class="d-flex justify-content-end">

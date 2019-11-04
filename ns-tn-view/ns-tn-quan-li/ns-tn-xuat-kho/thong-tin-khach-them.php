@@ -12,6 +12,16 @@
                 
                 if($thongtin != NULL){
                     ?>
+                        <strong class="text-center">Kết Quả Tìm Được</strong>
+                        <small class="text-center">
+                            <?php
+                                if($thongtin->loaikhachhang == "khachlaunam"){
+                                    echo "(Khách Lâu Năm)";
+                                }else{
+                                    echo "(Khách Từng Mua)";
+                                }
+                            ?>
+                        </small>
                         <div>
                             <label for=""><b>Tên nhà phân phối:</b></label>
                             <input type="text" value="<?php echo $thongtin->hovaten; ?>" class="form-control rounded-pill" readonly>
@@ -19,6 +29,8 @@
                             <input type="text" value="<?php echo $thongtin->diachi; ?>" class="form-control rounded-pill" readonly>
                             <label for=""><b>CMND:</b></label>
                             <input type="text" value="<?php echo $thongtin->cmnd; ?>" class="form-control rounded-pill" readonly>
+                            <label for=""><b>SĐT:</b></label>
+                            <input type="text" value="<?php echo $thongtin->sodienthoai; ?>" class="form-control rounded-pill" readonly>
                         </div>
                         <div class="mt-3">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#taodonhang">
@@ -28,15 +40,13 @@
                     <?php
                 }else{
                     ?>
-                        <label for="">Thông tin khách tìm được: </label>
-                        <div class="alert alert-primary" role="alert">
-                            Không tìm được khách hàng với số điện thoại này
-                        </div>
+                        <strong class="text-center">Khách Chưa Từng Đặt Hàng</strong>
+                        <small class="text-center">(Thêm thông tin cho khách hàng này)</small>
                     <?php  
                 }
             }else{
                 ?>
-                    <label for=""><b>Vui lòng nhập chính xác số điện thoại:</b> </label>
+                    <label for=""><b>Hãy nhập chính xác số điện thoại:</b> </label>
                     <button class="btn btn-primary rounded-pill" type="button" disabled>
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         Đang tìm thông tin nhà phân phối

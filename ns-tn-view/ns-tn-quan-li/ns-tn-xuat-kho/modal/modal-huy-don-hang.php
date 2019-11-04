@@ -14,8 +14,8 @@
                     <div class="form-group">
                         <input type="text" name="makhachhang" class="form-control rounded-pill d-none" value=<?php echo $makhachhang; ?> readonly >
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-brown" data-dismiss="modal">Đóng</button>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-brown mr-3" data-dismiss="modal">Đóng</button>
                         <button type="submit" class="btn btn-danger">Tiến Hành Hủy</button>
                     </div>
                 </form>

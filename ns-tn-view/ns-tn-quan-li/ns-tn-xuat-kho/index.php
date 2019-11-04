@@ -25,7 +25,7 @@
 
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3 ">
                         <button class=" btn btn-secondary text-light" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            Tìm nhà đơn hàng
+                            Tìm đơn hàng
                         </button>
                     </div>  <!-- END MENU -->
                 </div>

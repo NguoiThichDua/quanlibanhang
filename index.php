@@ -25,5 +25,6 @@
     <script src="ns-tn-public/ns-tn-js/app.js"></script>
     <script src="ns-tn-public/ns-tn-js/nha-phan-phoi.js"></script>
     <script src="ns-tn-public/ns-tn-js/dang-nhap.js"></script>
+    <script src="ns-tn-public/ns-tn-js/xuat-kho.js"></script>
 </body>
 </html>

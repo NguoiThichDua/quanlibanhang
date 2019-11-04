@@ -11,6 +11,7 @@
                 case 'quanli':
                     require "ns-tn-quan-li/index.php";
                 break;
+                # quản lí nhà phân phôi
                 case 'quanlinhaphanphoi':
                     require "ns-tn-quan-li/ns-tn-nha-phan-phoi/index.php";
                 break;
@@ -20,6 +21,14 @@
                 case 'suanhaphanphoi':
                     require "ns-tn-quan-li/ns-tn-nha-phan-phoi/sua-nha-phan-phoi.php";
                 break;
+                # quản lí xuất kho
+                case 'quanlixuatkho':
+                    require "ns-tn-quan-li/ns-tn-xuat-kho/index.php";
+                break;
+                case 'taomoidonhang':
+                    require "ns-tn-quan-li/ns-tn-xuat-kho/tao-moi-don-hang.php";
+                break;
+                
                    
                 default:
                     require "ns-tn-include/404.php";

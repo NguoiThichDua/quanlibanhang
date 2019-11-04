@@ -65,6 +65,26 @@
                         </div>
                     <?php
                     break;
+                    case 'xoathanhcong':
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show rounded-pill" role="alert" id="message" >
+                            <strong>Thành công!</strong> đã xóa..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <?php
+                    break;
+                    case 'datontaimonhang':
+                    ?>
+                        <div class="alert alert-warning alert-dismissible fade show rounded-pill" role="alert" id="message" >
+                            <strong>Thất bại!</strong> món hàng đã có trong giỏ hàng, bạn có thể thay đổi thông tin tại giỏ hàng..!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <?php
+                    break;
                 }
             }else{
 

@@ -1,13 +1,13 @@
 <?php
-    class databaseNhaPhanPhoi{
+    class databaseHangHoa{
         public $connect;
-        public function databaseNhaPhanPhoi(){
+        public function databaseHangHoa(){
             try {
                 require "ket-noi.php";
             } catch (Throwable $th) {
                 ?>
                     <div class="alert alert-danger" role="alert">
-                        Kết nối dữ liệu đến nhà phân phối bị lỗi...! Vui lòng liên hệ nhân viên kĩ thuật...!
+                        Kết nối dữ liệu đến hàng hóa bị lỗi...! Vui lòng liên hệ nhân viên kĩ thuật...!
                     </div>
                 <?php
                 $this->connect = null;

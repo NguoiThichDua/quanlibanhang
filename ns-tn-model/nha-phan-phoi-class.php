@@ -53,7 +53,14 @@
 			$list = $khachhang->fetchAll(); 
 			return $list;
         }
-       
-       
+
+        # tìm khách theo số điện thoại
+        public function TimNhaPhanPhoiTheoSoDienThoai($sodienthoai){
+            $khachhang = $this->connect->prepare("SELECT * FROM khachhang WHERE sodienthoai like '%$sodienthoai%'");
+            $khachhang->setFetchMode(PDO::FETCH_OBJ);
+			$khachhang->execute(array($sodienthoai));
+			$list = $khachhang->fetch(); 
+			return $list;
+        }
     }
 ?>

@@ -136,6 +136,22 @@
                     header("Location: ../index.php?page=taomoidonhang&id=$makhachhang&ketqua=thongtinrong");
                 }
             break;
+            case 'huydonhangdatao':
+                $makhachhang = $_POST['makhachhang'];
+
+                if(isset($_POST['makhachhang']) && isset($_POST['madonhang'])){
+                    $makhachhang = $_POST['makhachhang']; 
+                    $madonhang = $_POST['madonhang'];
+
+                    $donhang = new donhangclass();
+                    $donhang->XoaHangHoaTrongDonHang($makhachhang , $madonhang);
+                    header("Location: ../index.php?page=quanlixuatkho&ketqua=xoathanhcong");
+                }
+                else{
+                    # không nhận đủ dữ liệu POST qua
+                    header("Location: ../index.php?page=taomoidonhang&id=$makhachhang&ketqua=thongtinrong");
+                }
+            break;
             case 'suahanghoacuadonhangdatao':
                 $makhachhang = $_POST['makhachhang'];
 

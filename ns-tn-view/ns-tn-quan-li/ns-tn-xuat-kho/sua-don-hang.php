@@ -19,6 +19,7 @@
                 # nếu trả về id có nghĩ là trả về mã khách hàng=> thêm hàng hóa và số lượng
                 if(isset($_GET['id'])){ 
                     $makhachhang = $_GET['id'];
+                    $madonhang = $_GET['madonhang'];
         
                     require "ns-tn-model/nha-phan-phoi-class.php";
         
@@ -101,8 +102,6 @@
                                                         require "ns-tn-model/cthh-don-hang-class.php";
                                                         require "ns-tn-model/don-hang-class.php";
 
-                                                       $madonhang = $_GET['madonhang'];
-
                                                         $chitiethanghoadonhang = new cthhdhclass();
                                                         $thongtin = $chitiethanghoadonhang->LayHangHoaCuaDonHang($madonhang);
                                                     
@@ -125,7 +124,7 @@
                                             </table>
 
                                             <div class="mt-0">
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#huydonhang">
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#huydonhangdatao">
                                                     Hủy đơn hàng này
                                                 </button>
 

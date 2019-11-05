@@ -1,6 +1,9 @@
 <?php
     require "ns-tn-model/nha-phan-phoi-class.php";
     require "ns-tn-model/admin-class.php";
+    require "ns-tn-model/don-hang-class.php";
+    require "ns-tn-model/cthh-don-hang-class.php";
+    require "ns-tn-model/hang-hoa-class.php";
 
     # tìm thấy tài khoản admin đăng nhập
     if(isset($_SESSION['admin'])){
@@ -39,14 +42,28 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                <label for=""><b>Nhập tên: </b></label>
-                                <input type="text" id="tenkhachtim" onkeyup="" class="form-control rounded-pill">
-                            </div>    
-                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                                <label for=""><b>Nhập số điện thoại: </b></label>
-                                <input type="number" id="sodienthoaikhachtim" onkeyup="" class="form-control rounded-pill">
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                <label for=""><b>Mã bill: </b></label>
+                                <input type="text" id="mabill" onkeyup="TimDonHang()" class="form-control rounded-pill">
                             </div>  
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                <label for=""><b>Nhập tên: </b></label>
+                                <input type="text" id="tenkhachtim" onkeyup="TimDonHang()" class="form-control rounded-pill">
+                            </div>    
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                <label for=""><b>Nhập số điện thoại: </b></label>
+                                <input type="number" id="sodienthoaikhachtim" onkeyup="TimDonHang()" class="form-control rounded-pill">
+                            </div>  
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                <label for=""><b>Ngày bắt đầu: </b></label>
+                                <input type="date" id="ngaybatdautim" onkeyup="TimDonHang()" class="form-control rounded-pill">
+                            </div>  
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                <label for=""><b>Ngày kết thúc: </b></label>
+                                <input type="date" id="ngayketthuctim" onkeyup="TimDonHang()" class="form-control rounded-pill">
+                            </div>  
+
+                            <button class="btn btn-primary mt-3 ml-3" onclick="TimDonHang()">Tìm</button>
                         </div>           
                     </div>
                 </div>  <!-- END TIM KIEM -->
@@ -57,61 +74,65 @@
                 <div class="table-responsive-lg" id="bangloc">
                     <!-- TABLE -->
                     <table class="table table-hover table-bordered table-sm table-light text-center">
-                        <!-- <thead>
+                        <thead>
                             <tr>
-                                <th scope="col" colspan="8">TẤT CẢ ĐƠN HÀNG</th>
+                                <th scope="col" colspan="7">TẤT CẢ ĐƠN HÀNG</th>
                             </tr>
                             <tr class="bg-browns text-light">
                                 <th scope="col">#</th>
                                 <th scope="col">Họ tên</th>
                                 <th scope="col">SĐT</th>
-                                <th scope="col">CMND</th>
                                 <th scope="col">Địa chỉ</th>
-                                <th scope="col">Cấp bậc</th>
-                                <th scope="col">Trực thuộc</th>
+                                <th scope="col">Tên sp & số lượng</th>
+                                <th scope="col">Ghi chú</th>
                                 <th scope="col">Chức năng</th>
                             </tr>
                         </thead>
                         <tbody>
                         <?php
-                            $nhaphanphoi = new nhaphanphoiclass();
-                            $thongtin = $nhaphanphoi->LayTatCaNhaPhanPhoiLauNam();
                             $stt = 1;
+
+                            $donhang = new donhangclass();
+                            $thongtin = $donhang->LayTatCaDonHang();
                         
                             foreach ($thongtin as $tt) {
-                                $admin = new adminclass();
-                                $thongtinadmin = $admin->LayThongTinAdminBangMa($tt->maadmin);
                         ?>
-                            <tr <?php if($tt->danghi == 'danghi') echo 'style="color: #D8D8D8 "' ?>>
-                                <th scope="row"><?php echo $stt++; ?></th>
-                                <td><?php echo $tt->hovaten ?></td>
-                                <td><?php echo $tt->sodienthoai; ?></td>
-                                <td><?php echo $tt->cmnd; ?></td>
-                                <td><?php echo $tt->diachi; ?></td>
-                                <td>
-                                <?php 
-                                    if($tt->capbac == 'le') echo 'Khách lẻ'; 
-                                    else if($tt->capbac == 'si') echo 'Khách sĩ';
-                                    else if($tt->capbac == 'chinhanh') echo 'Chi nhánh';  
-                                    else if($tt->capbac == 'daili') echo 'Đại lí'; 
-                                    else if($tt->capbac == 'tongdaili') echo 'Tổng đại lí'; 
-                                    else if($tt->capbac == 'nhaphanphoi') echo 'Nhà phân phối';
-                                    else if($tt->capbac == 'nhaphanphoivang') echo 'Nhà phân phối vàng';
-                                    else if($tt->capbac == 'nhaphanphoikimcuong') echo 'Nhà phân phối kim cương';
-                                    else if($tt->capbac == 'giamdockinhdoanh') echo 'Giám đốc kinh doanh';
-                                ?>
-                                </td>
-                                <td><?php echo $tt->tructhuoc; ?></td>
-                                <td>
-                                    <a href="index.php?page=suanhaphanphoi&id=<?php echo $tt->makhachhang; ?>" class="btn btn-warning">Sửa</a>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#xemthongtinchitiet" onclick="XemThemThongTin('<?php echo $tt->hovaten ?>','<?php echo $tt->mahopdong;?>', '<?php echo $tt->macuahang;?>', '<?php echo $tt->hethongnhaphanphoi;?>', '<?php echo $tt->danghi;?>', '<?php echo $thongtinadmin->hovaten;?>','<?php echo $tt->ngaytao;?>')">Xem chi tiết</button>
-                                </td>
+                            <tr>
+                                <th scope="row" class="font-weight-normal"><?php echo $stt++; ?></th>
+                                <th scope="row" class="font-weight-normal"><?php echo $tt->hovaten; ?></th>
+                                <th scope="row" class="font-weight-normal"><?php echo $tt->sodienthoai; ?></th>
+                                <th scope="row" class="font-weight-normal"><?php echo $tt->diachi; ?></th>
+                                <th scope="row" class="font-weight-normal">
+                                    <?php 
+                                        # lấy chi tiết đơn hàng thông qua mã đơn hàng
+                                        $chitiet = new cthhdhclass();
+                                        $sanpham = $chitiet->LayHangHoaCuaDonHang($tt->madonhang);
+
+                                        # lấy tên hàng hóa bằng mã hàng hóa của chi tiết đơn hàng
+                                        # sử dụng ở dòng foreach
+                                        $hanghoa = new hanghoaclass();
+
+                                        foreach ($sanpham as $sp) {
+                                            echo "<strong><span class='text-success' title='Ngày sản xuất: $sp->ngaysanxuat'>" .  $hanghoa->LayHangHoaTheoMa($sp->mahanghoa)->tenhanghoa . "</span>: <span>" . $sp->soluong . "</span></strong><br>";
+                                        }
+                                    ?>
+                                </th>
+                                <th scope="row" class="font-weight-normal"><?php echo $tt->ghichu; ?></th>
+                                <th scope="row" class="font-weight-normal">
+                                    <?php
+                                        # lấy tên admin để show bằng modal
+                                        $admin = new adminclass();
+                                        $thongtin = $admin->LayThongTinAdminBangMa($tt->maadmin);
+                                        $tenadmin = $thongtin->hovaten;
+                                    ?>
+                                    <a href="index.php?page=suadonhang&id=<?php echo $tt->makhachhang?>&madonhang=<?php echo $tt->madonhang?>" class="btn btn-warning">Sửa</a>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#chitietdonhang" onclick="ChiTietDonHang('<?php echo $tt->ngaytao?>', '<?php echo $tt->mabill?>', '<?php echo $tenadmin?>')">Chi tiết</button>
+                                </th>
                             </tr>
                         <?php
                             }
-                        
                         ?>
-                        </tbody> -->
+                        </tbody>
                     </table>    <!-- END TABLE -->
                 </div>
             </div>
@@ -125,6 +146,6 @@
         <?php
     }
 
-    # gọi modal xem thêm thông tin nhà phân phối
-    #require "modal/modal-xem-thong-tin.php"
+    require "modal/modal-chi-tiet-don-hang.php"
 ?>
+

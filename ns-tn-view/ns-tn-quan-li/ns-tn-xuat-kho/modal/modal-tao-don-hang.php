@@ -14,7 +14,7 @@
                         <input type="text" name="makhachhang" value="<?php echo $thongtin->makhachhang; ?>" class="form-control rounded-pill d-none" readonly>
 
                         <label for=""><b>Nhập mã bill:</b> </label>
-                        <input type="text" name="mabill" class="form-control rounded-pill" required>
+                        <input type="text" name="mabill" class="form-control rounded-pill" required title="Không được để trống trường này">
 
                         <label for=""><b>Ghi chú:</b> </label>
                         <textarea name="ghichu" class="form-control" placeholder="Có thể bỏ trống ghi chú" style="border-radius: 30px"></textarea>

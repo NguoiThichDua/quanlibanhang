@@ -13,6 +13,52 @@
     require $file;
   
     class donhangclass extends databaseDonHang{
+
+        # tính sản phẩm
+        public function TinhTongSanPhamKhongNgay($tenkhach, $sodienthoai, $mabill){
+            $donhang = $this->connect->prepare("SELECT hanghoa.tenhanghoa, SUM(chitiethanghoadonhang.soluong) AS soluong FROM donhang, khachhang, chitiethanghoadonhang, hanghoa WHERE khachhang.makhachhang = donhang.makhachhang AND donhang.madonhang = chitiethanghoadonhang.madonhang AND chitiethanghoadonhang.mahanghoa = hanghoa.mahanghoa AND khachhang.hovaten LIKE '%$tenkhach%' AND khachhang.sodienthoai LIKE '%$sodienthoai%' AND donhang.mabill LIKE '%$mabill%' GROUP BY hanghoa.tenhanghoa ORDER BY donhang.ngaytao DESC");
+            $donhang->setFetchMode(PDO::FETCH_OBJ);
+			$donhang->execute(array($tenkhach, $sodienthoai, $mabill));
+			$list = $donhang->fetchAll(); 
+			return $list;
+        }
+
+         # tính sản phẩm có ngày
+         public function TinhTongSanPhamCoNgay($tenkhach, $sodienthoai, $mabill,$ngaybatdau, $ngayketthuc){
+            $donhang = $this->connect->prepare("SELECT hanghoa.tenhanghoa, SUM(chitiethanghoadonhang.soluong) AS soluong FROM donhang, khachhang, chitiethanghoadonhang, hanghoa WHERE khachhang.makhachhang = donhang.makhachhang AND donhang.madonhang = chitiethanghoadonhang.madonhang AND chitiethanghoadonhang.mahanghoa = hanghoa.mahanghoa AND khachhang.hovaten LIKE '%$tenkhach%' AND khachhang.sodienthoai LIKE '%$sodienthoai%' AND donhang.mabill LIKE '%$mabill%' AND donhang.ngaytao <= '$ngayketthuc' AND donhang.ngaytao >= '$ngaybatdau' GROUP BY hanghoa.tenhanghoa ORDER BY donhang.ngaytao DESC");
+            $donhang->setFetchMode(PDO::FETCH_OBJ);
+			$donhang->execute(array($tenkhach, $sodienthoai, $mabill,$ngaybatdau, $ngayketthuc));
+			$list = $donhang->fetchAll(); 
+			return $list;
+        }
+
+        # tìm đơn hàng
+        public function TimDonHangKhongNgay($tenkhach, $sodienthoai, $mabill){
+            $donhang = $this->connect->prepare("SELECT khachhang.makhachhang, khachhang.hovaten, khachhang.sodienthoai, khachhang.diachi, donhang.madonhang, donhang.mabill, donhang.maadmin,donhang.ngaytao, donhang.ghichu FROM donhang, khachhang WHERE donhang.makhachhang = khachhang.makhachhang AND khachhang.hovaten LIKE '%$tenkhach%' AND khachhang.sodienthoai LIKE '%$sodienthoai%' AND donhang.mabill LIKE '%$mabill%' ORDER BY donhang.ngaytao DESC");
+            $donhang->setFetchMode(PDO::FETCH_OBJ);
+			$donhang->execute(array($tenkhach, $sodienthoai, $mabill));
+			$list = $donhang->fetchAll(); 
+			return $list;
+        }
+        # tìm đơn hàng có ngày
+        public function TimDonHangCoNgay($tenkhach, $sodienthoai, $mabill, $ngaybatdau, $ngayketthuc){
+            $donhang = $this->connect->prepare("SELECT khachhang.hovaten, khachhang.sodienthoai, khachhang.diachi, donhang.madonhang, donhang.mabill, donhang.maadmin,donhang.ngaytao, donhang.ghichu FROM donhang, khachhang WHERE donhang.makhachhang = khachhang.makhachhang AND khachhang.hovaten LIKE '%$tenkhach%' AND khachhang.sodienthoai LIKE '%$sodienthoai%' AND donhang.mabill LIKE '%$mabill%' AND donhang.ngaytao <= '$ngayketthuc' AND donhang.ngaytao >= '$ngaybatdau' ORDER BY donhang.ngaytao DESC");
+            $donhang->setFetchMode(PDO::FETCH_OBJ);
+			$donhang->execute(array($tenkhach, $sodienthoai, $mabill, $ngaybatdau, $ngayketthuc));
+			$list = $donhang->fetchAll(); 
+			return $list;
+        }
+        
+
+         # lấy tất cả các đơn hàng đã đặt
+         public function LayTatCaDonHang(){
+            $donhang = $this->connect->prepare('SELECT kh.makhachhang, kh.hovaten, kh.sodienthoai, kh.diachi, dh.madonhang, dh.mabill, dh.maadmin,dh.ngaytao, dh.ghichu FROM donhang dh, khachhang kh WHERE kh.makhachhang = dh.makhachhang ORDER BY dh.ngaytao DESC');
+            $donhang->setFetchMode(PDO::FETCH_OBJ);
+            $donhang->execute();
+            $listdonhang = $donhang->fetchAll();
+            return $listdonhang;
+        }
+
         # thêm một đơn hàng mới
         public function ThemNhaPhanPhoiVaCuaHang($mabill, $ngaytao, $makhachhang, $ghichu, $maadmin){
             $cauLenh = 'INSERT INTO donhang (mabill, ngaytao, makhachhang, ghichu, maadmin) VALUES (?,?,?,?,?)';

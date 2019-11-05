@@ -28,7 +28,9 @@
                 case 'taomoidonhang':
                     require "ns-tn-quan-li/ns-tn-xuat-kho/tao-moi-don-hang.php";
                 break;
-                
+                case 'suadonhang':
+                    require "ns-tn-quan-li/ns-tn-xuat-kho/sua-don-hang.php";
+                break;
                    
                 default:
                     require "ns-tn-include/404.php";

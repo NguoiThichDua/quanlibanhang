@@ -15,7 +15,7 @@
     class cthhdhclass extends databaseCTHHDH{
         # lấy các thông tin của đơn hàng và chi tiết đơn hàng
         public function LayHangHoaCuaDonHang($madonhang){
-            $hanghoa = $this->connect->prepare('SELECT cthhdh.machitiethanghoadonhang, hh.tenhanghoa, cthhdh.soluong, cthhdh.ngaysanxuat, dh.makhachhang, dh.madonhang FROM chitiethanghoadonhang cthhdh, hanghoa hh, donhang dh WHERE dh.madonhang = cthhdh.madonhang AND hh.mahanghoa = cthhdh.mahanghoa AND cthhdh.madonhang = ?');
+            $hanghoa = $this->connect->prepare('SELECT cthhdh.machitiethanghoadonhang, cthhdh.mahanghoa, hh.tenhanghoa, cthhdh.soluong, cthhdh.ngaysanxuat, dh.makhachhang, dh.madonhang FROM chitiethanghoadonhang cthhdh, hanghoa hh, donhang dh WHERE dh.madonhang = cthhdh.madonhang AND hh.mahanghoa = cthhdh.mahanghoa AND cthhdh.madonhang = ?');
             $hanghoa->setFetchMode(PDO::FETCH_OBJ);
             $hanghoa-> execute(array($madonhang));
             $listhanghoa = $hanghoa->fetchAll();

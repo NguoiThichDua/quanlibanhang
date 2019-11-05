@@ -20,4 +20,33 @@ function SuaThongTinHangHoaDonHang(madonhang,makhachhang,machitiethanghoadonhang
     document.getElementById("ngaysanxuatsua").value = ngaysanxuatsua;
     document.getElementById("makhachhangsua").value = makhachhangsua;
     document.getElementById("madonhangsua").value = madonhangsua;
+
+    document.getElementById("machitiethanghoadonhangsuadatao").value = machitiethanghoadonhangsua;
+    document.getElementById("soluongsuadatao").value = soluongsua;
+    document.getElementById("ngaysanxuatsuadatao").value = ngaysanxuatsua;
+    document.getElementById("makhachhangsuadatao").value = makhachhangsua;
+    document.getElementById("madonhangsuadatao").value = madonhangsua;
+}
+
+function ChiTietDonHang(ngaytao, mabill, maadmin){
+    var thontinngaytao = ngaytao;
+    var thontinmabill = mabill; 
+    var thontinmaadmin = maadmin;
+
+    document.getElementById("mabillchitiet").value = thontinmabill;
+    document.getElementById("nguoitao").value = thontinmaadmin;
+    document.getElementById("ngaytao").value = thontinngaytao;
+}
+
+function TimDonHang(){
+    $(document).ready(function() {
+        var mabill = document.getElementById("mabill").value.trim();
+        var tenkhach = document.getElementById("tenkhachtim").value.trim();
+        var sodienthoai = document.getElementById("sodienthoaikhachtim").value.trim();
+        var ngaybatdautim = document.getElementById("ngaybatdautim").value.trim();
+        var ngayketthuctim = document.getElementById("ngayketthuctim").value.trim();
+        
+        $("#bangloc").load("ns-tn-view/ns-tn-quan-li/ns-tn-xuat-kho/boloc.php" , {tenkhach: tenkhach, sodienthoai: sodienthoai, ngaybatdautim: ngaybatdautim, ngayketthuctim: ngayketthuctim, mabill: mabill}); 
+      
+   });
 }

@@ -9,6 +9,41 @@
         $yeucau = $_GET["yeucau"];
 
         switch ($yeucau) {
+            case 'luuthongtinkhachmoi':
+                if(isset($_POST['hovaten']) && isset($_POST['sodienthoai']) && isset($_POST['diachi']) && isset($_POST['cmnd'])){
+                    $hovaten = trim($_POST['hovaten']);
+                    $sodienthoai = trim($_POST['sodienthoai']);
+                    $diachi = trim($_POST['diachi']);
+                    $cmnd = trim($_POST['cmnd']);
+                    $ngaytao = date("Y-m-d");
+
+                    if(strlen($hovaten) <= 0 || strlen($sodienthoai) <= 0 || strlen($diachi) <= 0 || strlen($cmnd) <= 0){
+                        header("Location: ../index.php?page=taomoinhaphanphoi&ketqua=thongtinrong");
+                    }else{
+                        if(isset($_SESSION['admin'])){
+                            $tentaikhoan = $_SESSION['admin'];
+
+                            # lấy mã admin
+                            $admin = new adminClass();
+                            $thongtin = $admin->LayThongTinAdminBangTen($tentaikhoan);
+                            $maadmin = $thongtin->maadmin;
+
+                            # thêm mới khi biết mã admin
+                            $nhaphanphoi = new nhaphanphoiclass();
+                            $nhaphanphoi->ThemNhaPhanPhoiQuaDuong($hovaten, $sodienthoai, $cmnd, $diachi,  $maadmin, $ngaytao);
+                            header("Location: ../index.php?page=taomoidonhang&sodienthoai=$sodienthoai");
+                        }else{
+                            # thêm mới khi không lấy được thông tin admin
+                            $nhaphanphoi = new nhaphanphoiclass();
+                            $nhaphanphoi->ThemNhaPhanPhoiQuaDuong($hovaten, $sodienthoai, $cmnd, $diachi,  0, $ngaytao);
+                            header("Location: ../index.php?page=taomoidonhang&sodienthoai=$sodienthoai");
+                        }
+                    }
+                }else{
+                    # không nhận được dữ liệu POST qua
+                    header("Location: ../index.php?page=quanlinhaphanphoi&ketqua=thongtinrong");
+                }
+            break;
             case 'themnhaphanphoi':
                 # nhận các thông tin được post qua có đầy đủ không
                 if(isset($_POST['hovaten']) && isset($_POST['sodienthoai']) && isset($_POST['diachi']) && isset($_POST['cmnd']) && isset($_POST['tructhuoc']) && isset($_POST['capbac'])){

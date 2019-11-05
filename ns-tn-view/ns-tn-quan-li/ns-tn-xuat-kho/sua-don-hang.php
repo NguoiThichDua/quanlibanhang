@@ -9,7 +9,7 @@
                 </div>
     
                 <div class="text-center">
-                    <h4><strong><b>Tạo Mới Đơn Hàng</b></strong></h4>
+                    <h4><strong><b>Sửa Đơn Hàng</b></strong></h4>
                 </div>
             </div>  <!-- END TITLE -->
 
@@ -27,13 +27,13 @@
         
                     if($thongtin != NULL){
                         ?>
-                        <marquee behavior="alternate">Bạn đang TẠO đơn hàng cho nhà phân phối: <b><u><?php echo "  " . $thongtin->hovaten;?></u></b></marquee>
+                        <marquee behavior="alternate">Bạn đang SỬA đơn hàng cho nhà phân phối: <b><u><?php echo "  " . $thongtin->hovaten;?></u></b></marquee>
                             <div class="row">
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                                     <div class="card bg-custom pb-3 mb-3">
                                         <div class="card-header bg-browns text-light" style="border-radius: 30px 30px 0 0">1. Thêm hàng hóa - Số lượng - Ngày sản xuất</div>
                                         <div class="card-body">
-                                            <form action="ns-tn-controller/xuat-kho-controller.php?yeucau=themhanghoavasoluong" method="post">
+                                            <form action="ns-tn-controller/xuat-kho-controller.php?yeucau=themhanghoavasoluongdatao" method="post">
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="form-group">
@@ -101,10 +101,7 @@
                                                         require "ns-tn-model/cthh-don-hang-class.php";
                                                         require "ns-tn-model/don-hang-class.php";
 
-                                                        # lấy thông tin đơn hàng đang tạo
-                                                        $donhang = new donhangclass();
-                                                        $thongtin = $donhang->LayDonHang($makhachhang);
-                                                        $madonhang = $thongtin->MAX;
+                                                       $madonhang = $_GET['madonhang'];
 
                                                         $chitiethanghoadonhang = new cthhdhclass();
                                                         $thongtin = $chitiethanghoadonhang->LayHangHoaCuaDonHang($madonhang);
@@ -116,7 +113,7 @@
                                                                 <td><?php echo $tt->soluong; ?></td>
                                                                 <td><?php echo $tt->ngaysanxuat; ?></td>
                                                                 <td>
-                                                                    <button onclick="SuaThongTinHangHoaDonHang('<?php echo $tt->madonhang?>','<?php echo $tt->makhachhang; ?>','<?php echo $tt->machitiethanghoadonhang?>', '<?php echo $tt->soluong?>', '<?php echo $tt->ngaysanxuat?>')" type="button" class="btn btn-primary" data-toggle="modal" data-target="#suathongtindonhang">
+                                                                    <button onclick="SuaThongTinHangHoaDonHang('<?php echo $tt->madonhang?>','<?php echo $tt->makhachhang; ?>','<?php echo $tt->machitiethanghoadonhang?>', '<?php echo $tt->soluong?>', '<?php echo $tt->ngaysanxuat?>')" type="button" class="btn btn-primary" data-toggle="modal" data-target="#suathongtindonhangdatao">
                                                                         Sửa
                                                                     </button>
                                                                 </td>
@@ -132,7 +129,7 @@
                                                     Hủy đơn hàng này
                                                 </button>
 
-                                                <a href="index.php?page=quanlixuatkho" class="btn btn-success">Xác Nhận Tạo</a>
+                                                <a href="index.php?page=quanlixuatkho" class="btn btn-success">Xác Nhận Thay Đổi</a>
                                             </div>
 
                                         </div>
@@ -150,37 +147,11 @@
                         <?php
                     }
                 # nếu không nhận được id nghĩa là không tìm thấy mã khách hàng => tìm và tạo đơn mới cho khách hàng
-                }else{
+                }
             ?>
-            </div>
-
-                <div class="col-12 col-sm-12 col-md-12 mt-3 d-flex justify-content-center">
-                    <div class="col-md-6">
-                        <div class="card p-3 bg-custom">
-                            <label for=""><b>Thêm đơn hàng: </b></label>
-                            <!-- Khi lưu thông tin khách 'qua đường' từ nha-phan-phoi-controller trả về sodienthoai => lấy ra và in ở đây -->
-                            <input type="number" value="<?php if(isset($_REQUEST['sodienthoai'])) echo $_REQUEST['sodienthoai'] ?>" class="form-control rounded-pill" placeholder="Nhập số điện thoại" id="sodienthoaithemdonhang" onkeyup="SoDienThoaiThemDonHang()">
-                            <div class="form-group mb-0">
-                                <button type="button" class="btn btn-primary mt-3" onclick="SoDienThoaiThemDonHang()">Tìm</button>
-                            </div>
-                            
-                           
-                        </div>
-                    </div>
-                </div>
-                
-               
-                <!-- load dữ liệu từ xuat-kho.js để tìm thông tin khách => tạo đơn hàng mới-->
-                <div class="col-12 col-sm-12 col-md-12 mt-3 d-flex justify-content-center">
-                    <div class="col-md-6">
-                        <div class="" id="thongtinkhachthem">
-                    
-                        </div>
-                    </div>
-                </div>
         </div>      
         <?php 
-                }
+            
         }else{
         ?>
             <div class="alert alert-danger" role="alert">

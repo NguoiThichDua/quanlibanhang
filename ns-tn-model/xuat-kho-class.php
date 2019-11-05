@@ -13,6 +13,6 @@
     require $file;
   
     class xuatkhoclass extends databaseXuatKho{
-        
+       
     }
 ?>

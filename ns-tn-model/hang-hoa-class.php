@@ -23,6 +23,15 @@
             return $listhanghoa;
         }
 
+         # lấy tên hàng hóa theo mã
+         public function LayHangHoaTheoMa($mahanghoa){
+            $hanghoa = $this->connect->prepare("SELECT * FROM hanghoa WHERE mahanghoa=?");
+			$hanghoa->setFetchMode(PDO::FETCH_OBJ);
+			$hanghoa->execute(array($mahanghoa));
+			$list = $hanghoa->fetch(); 
+			return $list;
+        }
+
          # tìm xem món hàng đó đã thêm vào đơn hàng chưa
          public function TimHangHoaDaThem($mahanghoa , $madonhang){
             $check = $this->connect->prepare("SELECT * FROM chitiethanghoadonhang WHERE mahanghoa =? AND madonhang = ?");

@@ -35,6 +35,8 @@
                         foreach ($thongtin as $tt) {
                             $admin = new adminclass();
                             $thongtinadmin = $admin->LayThongTinAdminBangMa($tt->maadmin);
+
+                            if($tt->loaikhachhang == "khachlaunam"){
                     ?>
                             <tr <?php if($tt->danghi == 'danghi') echo 'style="color: #D8D8D8 "' ?>>
                                 <th scope="row"><?php echo $stt++; ?></th>
@@ -63,6 +65,7 @@
                             </tr>
                     <?php
                         }
+                    }
                     ?>
                     </tbody>
                 </table>    <!-- END TABLE -->

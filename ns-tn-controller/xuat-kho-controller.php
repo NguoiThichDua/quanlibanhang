@@ -81,6 +81,41 @@
                     header("Location: ../index.php?page=taomoidonhang&id=$makhachhang&ketqua=thongtinrong");
                 }
             break;
+            case 'themhanghoavasoluongdatao':
+                $makhachhang = $_POST['makhachhang'];
+
+                if(isset($_POST['mahanghoa']) && isset($_POST['soluong']) && isset($_POST['ngaysanxuat']) && isset($_POST['makhachhang'])){
+                    # nhận các dữ liêu được POST qua
+                    $mahanghoa = trim($_POST['mahanghoa']);
+                    $soluong = trim($_POST['soluong']);
+                    $ngaysanxuat = $_POST['ngaysanxuat'];
+                    $makhachhang = $_POST['makhachhang'];
+
+                    # lấy thông tin đơn hàng đang tạo
+                    $donhang = new donhangclass();
+                    $thongtin = $donhang->LayDonHang($makhachhang);
+                    $madonhang = $thongtin->MAX;
+
+                    # tìm hàng hóa xem đã được thêm vào giỏ hàng chưa
+                    $hanghoa = new hanghoaclass();
+                    $count = $hanghoa->TimHangHoaDaThem($mahanghoa , $madonhang);
+
+                    # chưa tồn tại món hàng trong giỏ
+                    if($count <= 0){
+                        # thêm hàng hóa và số lượng vào đơn hàng
+                        $cthh = new cthhdhclass();
+                        $cthh->ThemHangHoaVaSoLuong($soluong, $ngaysanxuat, $mahanghoa, $madonhang);
+                        header("Location: ../index.php?page=suadonhang&id=$makhachhang&madonhang=$madonhang&ketqua=themthanhcong");
+                    }else{
+                        # đã tồn tại món hàng
+                        header("Location: ../index.php?page=suadonhang&id=$makhachhang&madonhang=$madonhang&ketqua=datontaimonhang");
+                    }
+
+                }else{
+                    # không nhận đủ dữ liệu POST qua
+                    header("Location: ../index.php?page=suadonhang&id=$makhachhang&madonhang=$madonhang&ketqua=thongtinrong");
+                }
+            break;
             case 'huydonhang':
                 $makhachhang = $_POST['makhachhang'];
 
@@ -99,6 +134,36 @@
                 else{
                     # không nhận đủ dữ liệu POST qua
                     header("Location: ../index.php?page=taomoidonhang&id=$makhachhang&ketqua=thongtinrong");
+                }
+            break;
+            case 'suahanghoacuadonhangdatao':
+                $makhachhang = $_POST['makhachhang'];
+
+                if(isset($_POST['madonhang']) && isset($_POST['makhachhang']) && isset($_POST['machitiethanghoadonhang']) && isset($_POST['soluong']) && isset($_POST['ngaysanxuat'])){
+                    # nhận các dữ liệu POST qua
+                    $makhachhang = $_POST['makhachhang'];
+                    $machitiethanghoadonhang = $_POST['machitiethanghoadonhang'];
+                    $soluong = trim($_POST['soluong']);
+                    $ngaysanxuat = $_POST['ngaysanxuat'];
+                    $madonhang = $_POST['madonhang'];
+
+                    # số lượng không được < 0
+                    if(strlen($soluong) < 0){
+                        header("Location: ../index.php?page=suadonhang&id=$makhachhang&madonhang=$madonhang&ketqua=thongtinrong");
+                    }else if($soluong == 0){
+                        # nếu số lượng sửa = 0 => xóa món hàng ra khỏi đơn hàng
+                        $cthh = new cthhdhclass();
+                        $cthh->XoaMotHangHoaTrongDonHang($makhachhang , $madonhang, $machitiethanghoadonhang);
+                        header("Location: ../index.php?page=suadonhang&id=$makhachhang&madonhang=$madonhang&ketqua=suathanhcong");
+                    }else{
+                        # thay đổi các thông tin của hàng hóa trong đơn hàng
+                        $cthh = new cthhdhclass();
+                        $cthh->SuaThongTinHangHoa($soluong, $ngaysanxuat, $machitiethanghoadonhang, $makhachhang);
+                        header("Location: ../index.php?page=suadonhang&id=$makhachhang&madonhang=$madonhang&ketqua=suathanhcong");
+                    }
+                }else{
+                    # không nhận đủ các dữ liệu được POST qua
+                    header("Location: ../index.php?page=suadonhang&id=$makhachhang&madonhang=$madonhang&ketqua=thongtinrong");
                 }
             break;
             case 'suahanghoacuadonhang':

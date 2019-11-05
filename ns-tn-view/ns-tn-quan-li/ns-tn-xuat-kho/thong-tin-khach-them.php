@@ -1,4 +1,4 @@
-<div class="card p-3 bg-custom">
+<div class="card p-3 mb-3 bg-custom">
     <?php
         require "../../../ns-tn-model/nha-phan-phoi-class.php";
         require "../../../ns-tn-model/xuat-kho-class.php";
@@ -17,8 +17,10 @@
                             <?php
                                 if($thongtin->loaikhachhang == "khachlaunam"){
                                     echo "(Khách Lâu Năm)";
+                                }else if($thongtin->loaikhachhang == "khachquaduong"){
+                                    echo "(Khách Từng Đặt Hàng)";
                                 }else{
-                                    echo "(Khách Từng Mua)";
+                                    echo "(Khách Chưa Từng Đặt Hàng !)";
                                 }
                             ?>
                         </small>
@@ -42,6 +44,22 @@
                     ?>
                         <strong class="text-center">Khách Chưa Từng Đặt Hàng</strong>
                         <small class="text-center">(Thêm thông tin cho khách hàng này)</small>
+
+                        <form action="ns-tn-controller/nha-phan-phoi-controller.php?yeucau=luuthongtinkhachmoi" method="post">
+                            <div class="form-group">
+                                <label for=""><b>Tên nhà phân phối:</b></label>
+                                <input type="text" name="hovaten" class="form-control rounded-pill" required title="Không được bỏ trống ô này">
+                                <label for=""><b>Địa chỉ:</b></label>
+                                <input type="text" name="diachi" class="form-control rounded-pill" required title="Không được bỏ trống ô này">
+                                <label for=""><b>CMND:</b></label>
+                                <input type="text" name="cmnd" class="form-control rounded-pill" required title="Không được bỏ trống ô này">
+                                <label for=""><b>SĐT:</b></label>
+                                <input type="number" name="sodienthoai" value="<?php echo $sodienthoai?>" class="form-control rounded-pill" required title="Không được bỏ trống ô này">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-success" value="Lưu thông tin khách này">
+                            </div>
+                        </form>
                     <?php  
                 }
             }else{

@@ -31,6 +31,13 @@
 			return $list;
         }
 
+        # thêm một nhà phân phối mới 
+        public function ThemNhaPhanPhoiQuaDuong($hovaten, $sodienthoai, $cmnd, $diachi,  $maadmin, $ngaytao){
+            $cauLenh = 'INSERT INTO khachhang (hovaten, sodienthoai, cmnd, diachi, maadmin, ngaytao) VALUES (?,?,?,?,?,?)';
+            $themMoi = $this->connect->prepare($cauLenh);
+            $themMoi->execute(array($hovaten, $sodienthoai, $cmnd, $diachi, $maadmin, $ngaytao));
+        }
+
         # thêm một nhà phân phối mới và cửa hàng nếu có
         public function ThemNhaPhanPhoiVaCuaHang($hovaten, $sodienthoai, $cmnd, $diachi, $capbac, $tructhuoc, $mahopdong, $macuahang, $hethongnhaphanphoi, $loaikhachhang, $maadmin, $ngaytao){
             $cauLenh = 'INSERT INTO khachhang (hovaten, sodienthoai, cmnd, diachi, capbac, tructhuoc, mahopdong, macuahang, hethongnhaphanphoi, loaikhachhang, maadmin, ngaytao) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)';

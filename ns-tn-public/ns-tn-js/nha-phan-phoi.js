@@ -32,3 +32,12 @@ function TimKhachHang(){
       
    });
 }
+
+function CheckSoDienThoai(){
+    $(document).ready(function() {
+        var sodienthoai = document.getElementById("sodienthoaicheck").value.trim();
+        
+        $("#showthongtinsodienthoai").load("ns-tn-view/ns-tn-quan-li/ns-tn-nha-phan-phoi/tao-nha-phan-phoi-qua-duong.php" , {sodienthoai: sodienthoai}); 
+      
+   });
+}

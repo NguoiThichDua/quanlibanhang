@@ -31,6 +31,15 @@
 			return $list;
         }
 
+         # lấy thông tin của 1 tài khoản khách hàng bằng số điện thoại
+         public function LayThongTinKhachHangBangSoDienThoai($sodienthoai){
+            $khachhang = $this->connect->prepare("SELECT * FROM khachhang  WHERE sodienthoai=? AND loaikhachhang = 'khachquaduong' ");
+			$khachhang->setFetchMode(PDO::FETCH_OBJ);
+			$khachhang->execute(array($sodienthoai));
+			$list = $khachhang->fetch(); 
+			return $list;
+        }
+
         # thêm một nhà phân phối mới 
         public function ThemNhaPhanPhoiQuaDuong($hovaten, $sodienthoai, $cmnd, $diachi,  $maadmin, $ngaytao){
             $cauLenh = 'INSERT INTO khachhang (hovaten, sodienthoai, cmnd, diachi, maadmin, ngaytao) VALUES (?,?,?,?,?,?)';
@@ -50,6 +59,13 @@
             $cauLenh = ' UPDATE khachhang SET hovaten = ?, sodienthoai = ?, cmnd = ?, diachi = ?, capbac = ?, tructhuoc = ?, mahopdong = ?, macuahang = ?, hethongnhaphanphoi = ?, loaikhachhang = ?, maadmin = ?, danghi = ?, ngaysua = ? , maadminsua = ? WHERE khachhang.makhachhang = ?';
             $themMoi = $this->connect->prepare($cauLenh);
             $themMoi->execute(array($hovaten, $sodienthoai, $cmnd, $diachi, $capbac, $tructhuoc, $mahopdong, $macuahang, $hethongnhaphanphoi, $loaikhachhang, $maadmin, $danghi, $ngaysua, $maadminsua, $makhachhang));
+        }
+
+        # sửa loại khách hàng
+        public function SuaLoaiKhachHang($ngaytao, $maadmin,$sodienthoai,  $makhachhang){
+            $cauLenh = ' UPDATE khachhang SET loaikhachhang = "khachlaunam", ngaytao = ? ,maadmin = ? WHERE khachhang.sodienthoai = ? AND khachhang.makhachhang = ?';
+            $themMoi = $this->connect->prepare($cauLenh);
+            $themMoi->execute(array($ngaytao, $maadmin,$sodienthoai, $makhachhang));
         }
 
         # tìm khách theo tên và số điện thoại

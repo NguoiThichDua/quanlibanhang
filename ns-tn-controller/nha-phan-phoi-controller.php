@@ -9,6 +9,33 @@
         $yeucau = $_GET["yeucau"];
 
         switch ($yeucau) {
+            case 'thaydoiloaikhachhang':
+                if(isset($_POST['sodienthoai']) && isset($_POST['makhachhang'])){
+                    $sodienthoai = $_POST['sodienthoai'];
+                    $makhachhang = $_POST['makhachhang'];
+                    $ngaytao = date("Y-m-d");
+
+                    if(isset($_SESSION['admin'])){
+                        $tentaikhoan = $_SESSION['admin'];
+
+                        # lấy mã admin
+                        $admin = new adminClass();
+                        $thongtin = $admin->LayThongTinAdminBangTen($tentaikhoan);
+                        $maadmin = $thongtin->maadmin;
+
+                        # thêm mới khi biết mã admin
+                        $khachhang = new nhaphanphoiclass();
+                        $khachhang->SuaLoaiKhachHang($ngaytao, $maadmin,$sodienthoai,  $makhachhang);
+                        header("Location: ../index.php?page=quanlinhaphanphoi&ketqua=themthanhcong");
+                    }else{
+                        $khachhang = new nhaphanphoiclass();
+                        $khachhang->SuaLoaiKhachHang($ngaytao, 0 ,$sodienthoai,  $makhachhang);
+                        header("Location: ../index.php?page=quanlinhaphanphoi&ketqua=themthanhcong");
+                    }
+                }else{
+                    header("Location: ../index.php?page=quanlinhaphanphoi&ketqua=thongtinrong");
+                }
+            break;
             case 'luuthongtinkhachmoi':
                 if(isset($_POST['hovaten']) && isset($_POST['sodienthoai']) && isset($_POST['diachi']) && isset($_POST['cmnd'])){
                     $hovaten = trim($_POST['hovaten']);

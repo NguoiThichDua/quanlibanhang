@@ -1,4 +1,6 @@
 <?php
+    require "ns-tn-model/nha-phan-phoi-class.php";
+
     if(isset($_SESSION['admin'])){
         ?>
         <div class="row">
@@ -15,6 +17,7 @@
               
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3">
                 <div class="card p-3 form-them-khach bg-custom">
+                <h6 class="d-flex justify-content-center text-danger mt-2 mb-2" id="showthongtinsodienthoai"></h6>
                     <!-- FORM THEM -->
                     <form action="ns-tn-controller/nha-phan-phoi-controller.php?yeucau=themnhaphanphoi" method="POST">
                         <div class="form-group">
@@ -23,7 +26,7 @@
                         </div>
                         <div class="form-group">
                             <label for=""><b>Số điện thoại:</b> (<span class="need">*</span>)</label>
-                            <input type="number" name="sodienthoai" class="form-control rounded-pill" title="Không được bỏ rỗng trường này" required>
+                            <input type="number" name="sodienthoai" id="sodienthoaicheck" onkeyup="CheckSoDienThoai()" class="form-control rounded-pill" title="Không được bỏ rỗng trường này" required> 
                         </div>
                         <div class="form-group">
                             <label for=""><b>Địa chỉ:</b> (<span class="need">*</span>)</label>

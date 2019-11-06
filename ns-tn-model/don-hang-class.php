@@ -14,6 +14,15 @@
   
     class donhangclass extends databaseDonHang{
 
+        # Tìm đơn hàng có phải của người nào đó không
+        public function TimDonHangCuaKhachHang($makhachhang, $madonhang){
+            $check = $this->connect->prepare("SELECT * FROM donhang WHERE makhachhang = ? AND madonhang = ?");
+            $check->setFetchMode(PDO::FETCH_OBJ);
+            $check -> execute(array($makhachhang, $madonhang));
+            $count = count($check->fetchAll());
+            return $count;
+        }
+
         # tính sản phẩm
         public function TinhTongSanPhamKhongNgay($tenkhach, $sodienthoai, $mabill){
             $donhang = $this->connect->prepare("SELECT hanghoa.tenhanghoa, SUM(chitiethanghoadonhang.soluong) AS soluong FROM donhang, khachhang, chitiethanghoadonhang, hanghoa WHERE khachhang.makhachhang = donhang.makhachhang AND donhang.madonhang = chitiethanghoadonhang.madonhang AND chitiethanghoadonhang.mahanghoa = hanghoa.mahanghoa AND khachhang.hovaten LIKE '%$tenkhach%' AND khachhang.sodienthoai LIKE '%$sodienthoai%' AND donhang.mabill LIKE '%$mabill%' GROUP BY hanghoa.tenhanghoa ORDER BY donhang.ngaytao DESC");

@@ -17,16 +17,22 @@
             <div class="col-12 col-sm-12 col-md-12 mt-3">
             <?php
                 # nếu trả về id có nghĩ là trả về mã khách hàng=> thêm hàng hóa và số lượng
-                if(isset($_GET['id'])){ 
+                if(isset($_GET['id']) && isset($_GET['madonhang'])){ 
                     $makhachhang = $_GET['id'];
                     $madonhang = $_GET['madonhang'];
         
                     require "ns-tn-model/nha-phan-phoi-class.php";
+                    require "ns-tn-model/don-hang-class.php";
         
+                    # kiểm tra xem thằng khách này có tồn tại không => thêm đơn hàng
                     $khachhang = new nhaphanphoiclass();
                     $thongtin = $khachhang->LayThongTinKhachHangBangMa($makhachhang);
+
+                    # kiểm tra xem thằng khách này với đơn hàng của nó có tồn tại không => sửa đơn hàng
+                    $donhang = new donhangclass();
+                    $count = $donhang->TimDonHangCuaKhachHang($makhachhang, $madonhang);
         
-                    if($thongtin != NULL){
+                    if($thongtin != NULL && $count > 0){
                         ?>
                         <marquee behavior="alternate">Bạn đang SỬA đơn hàng cho nhà phân phối: <b><u><?php echo "  " . $thongtin->hovaten;?></u></b></marquee>
                             <div class="row">
@@ -100,7 +106,6 @@
                                                 <tbody>
                                                     <?php
                                                         require "ns-tn-model/cthh-don-hang-class.php";
-                                                        require "ns-tn-model/don-hang-class.php";
 
                                                         $chitiethanghoadonhang = new cthhdhclass();
                                                         $thongtin = $chitiethanghoadonhang->LayHangHoaCuaDonHang($madonhang);
@@ -124,11 +129,11 @@
                                             </table>
 
                                             <div class="mt-0">
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#huydonhangdatao">
+                                                <button type="button" class="btn btn-danger mt-3" data-toggle="modal" data-target="#huydonhangdatao">
                                                     Hủy đơn hàng này
                                                 </button>
 
-                                                <a href="index.php?page=quanlixuatkho" class="btn btn-success">Xác Nhận Thay Đổi</a>
+                                                <a href="index.php?page=quanlixuatkho" class="btn btn-success mt-3">Xác Nhận Thay Đổi</a>
                                             </div>
 
                                         </div>
@@ -138,14 +143,26 @@
                            
 
                         <?php
-                    }else{
+                    }else if($thongtin == NULL){
                         ?>
-                            <div class="alert alert-danger" role="alert">
+                            <div class="alert alert-warning" role="alert">
                                 <strong>Lỗi...</strong> Không tìm thấy thông tin nhà phân phối này...!
                             </div>
                         <?php
+                    }else{
+                        ?>
+                            <div class="alert alert-warning" role="alert">
+                                <strong>Lỗi...</strong> Không tìm thấy thông tin nhà phân phối hoặc đơn hàng này...!
+                            </div>
+                    <?php
                     }
                 # nếu không nhận được id nghĩa là không tìm thấy mã khách hàng => tìm và tạo đơn mới cho khách hàng
+                }else if($count <= 0 || $count == NULL){
+                    ?>
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Lỗi...</strong> Không tìm thấy thông tin nhà phân phối hoặc đơn hàng này...!
+                    </div>
+            <?php
                 }
             ?>
         </div>      

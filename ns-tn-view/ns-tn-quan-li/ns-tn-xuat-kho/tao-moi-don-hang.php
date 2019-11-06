@@ -128,11 +128,11 @@
                                             </table>
 
                                             <div class="mt-0">
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#huydonhang">
+                                                <button type="button" class="btn btn-danger mt-3" data-toggle="modal" data-target="#huydonhang">
                                                     Hủy đơn hàng này
                                                 </button>
 
-                                                <a href="index.php?page=quanlixuatkho" class="btn btn-success">Xác Nhận Tạo</a>
+                                                <a href="index.php?page=quanlixuatkho" class="btn btn-success mt-3">Xác Nhận Tạo</a>
                                             </div>
 
                                         </div>

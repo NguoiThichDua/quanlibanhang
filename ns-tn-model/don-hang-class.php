@@ -14,6 +14,15 @@
   
     class donhangclass extends databaseDonHang{
 
+        # lấy tên hàng hóa theo mã
+        public function LayHangTonTheoMa($mahanghoa){
+            $hanghoa = $this->connect->prepare("SELECT * FROM hanghoa WHERE mahanghoa=?");
+			$hanghoa->setFetchMode(PDO::FETCH_OBJ);
+			$hanghoa->execute(array($mahanghoa));
+			$list = $hanghoa->fetch(); 
+			return $list;
+        }
+
         # Tìm đơn hàng có phải của người nào đó không
         public function TimDonHangCuaKhachHang($makhachhang, $madonhang){
             $check = $this->connect->prepare("SELECT * FROM donhang WHERE makhachhang = ? AND madonhang = ?");

@@ -1,6 +1,7 @@
 <div class="card p-3 mb-3 bg-custom">
     <?php
         require "../../../ns-tn-model/nha-phan-phoi-class.php";
+        require "../../../ns-tn-model/hang-ton-class.php";
 
         if(isset($_REQUEST['sodienthoai'])){
             $sodienthoai = $_REQUEST['sodienthoai'];
@@ -35,30 +36,14 @@
                         </div>
                         <div class="mt-3">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#taodonhang">
-                                Tạo đơn hàng
+                                Tạo đơn hàng tồn
                             </button>
                         </div>
                     <?php
                 }else{
                     ?>
-                        <strong class="text-center">Khách Chưa Từng Đặt Hàng</strong>
-                        <small class="text-center">(Thêm thông tin cho khách hàng này)</small>
-
-                        <form action="ns-tn-controller/nha-phan-phoi-controller.php?yeucau=luuthongtinkhachmoi" method="post">
-                            <div class="form-group">
-                                <label for=""><b>Tên nhà phân phối:</b></label>
-                                <input type="text" name="hovaten" class="form-control rounded-pill" required title="Không được bỏ trống ô này">
-                                <label for=""><b>Địa chỉ:</b></label>
-                                <input type="text" name="diachi" class="form-control rounded-pill" required title="Không được bỏ trống ô này">
-                                <label for=""><b>CMND:</b></label>
-                                <input type="text" name="cmnd" class="form-control rounded-pill" required title="Không được bỏ trống ô này">
-                                <label for=""><b>SĐT:</b></label>
-                                <input type="number" name="sodienthoai" value="<?php echo $sodienthoai?>" class="form-control rounded-pill" required title="Không được bỏ trống ô này">
-                            </div>
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-success" value="Lưu thông tin khách này">
-                            </div>
-                        </form>
+                        <strong class="text-center">Nhà Phân Phối Chưa Từng Đặt Hàng</strong>
+                        <small class="text-center">(Không Thể Tạo Đơn Hàng Tồn)</small>
                     <?php  
                 }
             }else{
@@ -82,5 +67,5 @@
 </div>
 
 <?php
-     require "modal/modal-tao-don-hang.php";
+    require "modal/modal-tao-don-hang.php";
 ?>

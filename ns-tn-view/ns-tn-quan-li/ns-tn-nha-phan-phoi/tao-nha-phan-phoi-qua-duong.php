@@ -10,9 +10,10 @@
         //echo $thongtin->hovaten;
         if($thongtin != NULL){
         ?>
-            <i><b><u><a data-toggle="modal" data-target="#thaydoiloaikhachhang">
-                Tìm thấy thông tin khách hàng này (nhấn để tạo)
-            </u></b></a></i>
+            <i><b><a data-toggle="modal" data-target="#thaydoiloaikhachhang">
+               
+                <marquee behavior="alternate" width="10%">>></marquee><u>Nhấn để tạo nhanh</u><marquee behavior="alternate" width="10%"><< </marquee>
+            </b></a></i>
         <?php
         }
     }else{
@@ -24,7 +25,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bg-browns text-light">
-                <h5 class="modal-title" id="exampleModalCenterTitle"><?php echo $thongtin->hovaten; ?></h5>
+                <h5 class="modal-title" id="exampleModalCenterTitle"><u><?php echo $thongtin->hovaten; ?></u></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>

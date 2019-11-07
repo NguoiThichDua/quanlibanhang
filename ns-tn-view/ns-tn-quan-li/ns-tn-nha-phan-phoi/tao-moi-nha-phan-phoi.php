@@ -17,7 +17,8 @@
               
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3">
                 <div class="card p-3 form-them-khach bg-custom">
-                <h6 class="d-flex justify-content-center text-danger mt-2 mb-2" id="showthongtinsodienthoai"></h6>
+
+                <h6 class="d-flex justify-content-center text-danger mt-2 mb-2 w-100" id="showthongtinsodienthoai"></h6>
                     <!-- FORM THEM -->
                     <form action="ns-tn-controller/nha-phan-phoi-controller.php?yeucau=themnhaphanphoi" method="POST">
                         <div class="form-group">

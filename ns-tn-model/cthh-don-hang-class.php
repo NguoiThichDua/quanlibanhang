@@ -31,7 +31,7 @@
 
         # sửa thông tin chi tiết hàng hóa 
         public function SuaThongTinHangHoa($soluong, $ngaysanxuat, $machitiethanghoadonhang, $makhachhang){
-            $cauLenh = 'UPDATE chitiethanghoadonhang, donhang SET chitiethanghoadonhang.soluong = ?, chitiethanghoadonhang.ngaysanxuat = ? WHERE chitiethanghoadonhang.machitiethanghoadonhang = ? AND donhang.makhachhang = ?';
+            $cauLenh = 'UPDATE chitiethanghoadonhang, donhang SET chitiethanghoadonhang.soluong = ?, chitiethanghoadonhang.ngaysanxuat = ? WHERE donhang.madonhang = chitiethanghoadonhang.madonhang AND chitiethanghoadonhang.machitiethanghoadonhang = ? AND donhang.makhachhang = ?';
             $capNhat = $this->connect->prepare($cauLenh);
             $capNhat->execute(array($soluong, $ngaysanxuat, $machitiethanghoadonhang, $makhachhang));
         }

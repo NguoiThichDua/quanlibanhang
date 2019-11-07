@@ -31,7 +31,16 @@
                 case 'suadonhang':
                     require "ns-tn-quan-li/ns-tn-xuat-kho/sua-don-hang.php";
                 break;
-                   
+                 # quản lí hàng tồn
+                case 'quanlitonkho':
+                    require "ns-tn-quan-li/ns-tn-ton-kho/index.php";
+                break;
+                case 'taomoihangton':
+                    require "ns-tn-quan-li/ns-tn-ton-kho/tao-moi-hang-ton.php";
+                break;
+                case 'suadonhangton':
+                    require "ns-tn-quan-li/ns-tn-ton-kho/sua-don-hang.php";
+                break;
                 default:
                     require "ns-tn-include/404.php";
                 break;

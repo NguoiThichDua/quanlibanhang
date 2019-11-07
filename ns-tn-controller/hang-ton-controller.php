@@ -157,38 +157,54 @@
             break;
 
             case 'themhanghoavasoluongdatao':
-            $makhachhang = $_POST['makhachhang'];
-            $mahangton = $_POST['mahangton'];
-
-            if(isset($_POST['mahanghoa']) && isset($_POST['soluong']) && isset($_POST['makhachhang']) && isset($_POST['mahangton'])){
-                # nhận các dữ liêu được POST qua
-                $mahanghoa = trim($_POST['mahanghoa']);
-                $soluong = trim($_POST['soluong']);
                 $makhachhang = $_POST['makhachhang'];
                 $mahangton = $_POST['mahangton'];
 
-                # tìm hàng hóa xem đã được thêm vào giỏ hàng chưa
-                $hanghoa = new hanghoaclass();
-                $count = $hanghoa->TimHangHoaDaThemHangTon($mahanghoa , $mahangton);
+                if(isset($_POST['mahanghoa']) && isset($_POST['soluong']) && isset($_POST['makhachhang']) && isset($_POST['mahangton'])){
+                    # nhận các dữ liêu được POST qua
+                    $mahanghoa = trim($_POST['mahanghoa']);
+                    $soluong = trim($_POST['soluong']);
+                    $makhachhang = $_POST['makhachhang'];
+                    $mahangton = $_POST['mahangton'];
+
+                    # tìm hàng hóa xem đã được thêm vào giỏ hàng chưa
+                    $hanghoa = new hanghoaclass();
+                    $count = $hanghoa->TimHangHoaDaThemHangTon($mahanghoa , $mahangton);
 
 
-                // # chưa tồn tại món hàng trong giỏ
-                if($count <= 0){
-                    # thêm hàng hóa và số lượng vào đơn hàng
-                    $cthh = new cthhhtclass();
-                    $cthh->ThemHangHoaVaSoLuong($soluong, $mahanghoa, $mahangton);
-                    header("Location: ../index.php?page=suadonhangton&id=$makhachhang&mahangton=$mahangton&ketqua=themthanhcong");
+                    // # chưa tồn tại món hàng trong giỏ
+                    if($count <= 0){
+                        # thêm hàng hóa và số lượng vào đơn hàng
+                        $cthh = new cthhhtclass();
+                        $cthh->ThemHangHoaVaSoLuong($soluong, $mahanghoa, $mahangton);
+                        header("Location: ../index.php?page=suadonhangton&id=$makhachhang&mahangton=$mahangton&ketqua=themthanhcong");
+                    }else{
+                        # đã tồn tại món hàng
+                        header("Location: ../index.php?page=suadonhangton&id=$makhachhang&mahangton=$mahangton&ketqua=datontaimonhang");
+                    }
+
                 }else{
-                    # đã tồn tại món hàng
-                    header("Location: ../index.php?page=suadonhangton&id=$makhachhang&mahangton=$mahangton&ketqua=datontaimonhang");
+                    # không nhận đủ dữ liệu POST qua
+                    header("Location: ../index.php?page=suadonhangton&id=$makhachhang&mahangton=$mahangton&ketqua=thongtinrong");
                 }
-
-            }else{
-                # không nhận đủ dữ liệu POST qua
-                header("Location: ../index.php?page=suadonhangton&id=$makhachhang&mahangton=$mahangton&ketqua=thongtinrong");
-            }
             break;
+            case 'huydonhangdatao':
+                $makhachhang = $_POST['makhachhang'];
+                $mahangton = $_POST['mahangton'];
 
+                if(isset($_POST['makhachhang']) && isset($_POST['mahangton'])){
+                    $makhachhang = $_POST['makhachhang']; 
+                    $mahangton = $_POST['mahangton'];
+
+                    $donhang = new hangtonclass();
+                    $donhang->XoaHangHoaTrongDonHang($makhachhang , $mahangton);
+                    header("Location: ../index.php?page=quanlitonkho&ketqua=xoathanhcong");
+                }
+                else{
+                    # không nhận đủ dữ liệu POST qua
+                    header("Location: ../index.php?page=quanlitonkho&id=$makhachhang&mahangton=$mahangton&ketqua=thongtinrong");
+                }
+            break;
            
             default:
                 # code...

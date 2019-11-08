@@ -24,11 +24,11 @@
                 <div class="row">
                     <!-- MENU -->
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3">
-                        <a href="index.php?page=taomoihangton" class=" btn btn-success">Tạo đơn cập nhật hàng tồn</a>
+                        <a href="index.php?page=taomoihangton" class=" btn btn-success hvr-grow-rotate">Tạo đơn cập nhật hàng tồn</a>
                     </div>
 
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3 ">
-                        <button class=" btn btn-secondary text-light" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <button class=" btn btn-secondary text-light hvr-wobble-horizontal" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                             Tìm đơn hàng tồn
                         </button>
                     </div>  <!-- END MENU -->
@@ -107,6 +107,15 @@
                                 </th>
                                 <th scope="col" class="font-weight-normal"><?php echo $tt->ngaytaohangton; ?></th>
                                 <th scope="col" class="font-weight-normal">
+
+                                    <?php
+                                        # lấy tên admin để show bằng modal
+                                        $admin = new adminclass();
+                                        $thongtin = $admin->LayThongTinAdminBangMa($tt->maadmin);
+                                        $tenadmin = $thongtin->hovaten;
+                                    ?>
+
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#chitietdonhang" onclick="ChiTietDonHangTon('<?php echo $tenadmin?>')">Chi tiết</button>
                                     <a href="index.php?page=suadonhangton&id=<?php echo $tt->makhachhang?>&mahangton=<?php echo $tt->mahangton?>" class="btn btn-warning">Sửa</a>
                                 </th>
                                 
@@ -127,6 +136,6 @@
             </div>
         <?php
     }
-
+    require "modal/modal-chi-tiet-don-hang.php"
 ?>
 

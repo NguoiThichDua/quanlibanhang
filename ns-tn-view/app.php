@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(isset($_SESSION['admin'])){
-        
+      
         require "ns-tn-view/ns-tn-include/logo.php";
         require "ns-tn-view/ns-tn-include/message.php";
 

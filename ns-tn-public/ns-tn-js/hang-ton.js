@@ -23,3 +23,9 @@ function SuaThongTinHangHoaDonHangTon(mahangton, makhachhang ,machitiethanghoaha
     document.getElementById("machitiethanghoadonhangsuadatao").value = machitiethanghoadonhangsua;
     document.getElementById("soluongsuadatao").value = soluongsua;
 }
+
+function ChiTietDonHangTon(tenadmin){
+    var tenadmintao = tenadmin;
+
+    document.getElementById("nguoitao").value = tenadmintao;
+}

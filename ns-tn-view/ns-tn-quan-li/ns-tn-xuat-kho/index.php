@@ -23,11 +23,11 @@
                 <div class="row">
                     <!-- MENU -->
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3">
-                        <a href="index.php?page=taomoidonhang" class=" btn btn-success">Tạo đơn hàng mới</a>
+                        <a href="index.php?page=taomoidonhang" class=" btn btn-success hvr-grow-rotate">Tạo đơn hàng mới</a>
                     </div>
 
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3 ">
-                        <button class=" btn btn-secondary text-light" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <button class=" btn btn-secondary text-light hvr-wobble-horizontal" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                             Tìm đơn hàng
                         </button>
                     </div>  <!-- END MENU -->
@@ -125,8 +125,9 @@
                                         $thongtin = $admin->LayThongTinAdminBangMa($tt->maadmin);
                                         $tenadmin = $thongtin->hovaten;
                                     ?>
+                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#chitietdonhang" onclick="ChiTietDonHang('<?php echo $tt->ngaytao?>', '<?php echo $tt->mabill?>', '<?php echo $tenadmin?>')">Chi tiết</button>
                                     <a href="index.php?page=suadonhang&id=<?php echo $tt->makhachhang?>&madonhang=<?php echo $tt->madonhang?>" class="btn btn-warning">Sửa</a>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#chitietdonhang" onclick="ChiTietDonHang('<?php echo $tt->ngaytao?>', '<?php echo $tt->mabill?>', '<?php echo $tenadmin?>')">Chi tiết</button>
+                                   
                                 </th>
                             </tr>
                         <?php

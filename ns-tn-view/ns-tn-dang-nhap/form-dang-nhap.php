@@ -2,7 +2,9 @@
 <?php require "ns-tn-view/ns-tn-include/logo.php"; ?>
 
 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 p-3 text-center">
-    <h4><strong><b>ĐĂNG NHẬP</b></strong></h4>
+<marquee behavior="alternate"><marquee width="150"><h4><strong><b>ĐĂNG NHẬP</b></strong></h4></marquee></marquee>
+    
+
 </div>
 
 <div> <?php require "ns-tn-view/ns-tn-include/message.php"; ?> </div>
@@ -24,7 +26,7 @@
     <div class="form-group">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center ">
-                <input type="submit" value="ĐĂNG NHẬP" class="btn btn-success btn-lg">
+                <input type="submit" value="ĐĂNG NHẬP" class="btn btn-success btn-lg hvr-buzz">
             </div>
         </div>
     </div>

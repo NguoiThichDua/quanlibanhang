@@ -9,7 +9,7 @@
                 </div>
     
                 <div class="text-center">
-                    <h4><strong><b>Sửa Đơn Hàng TỒN</b></strong></h4>
+                    <h4><strong><b>Sửa Đơn Hàng Tồn</b></strong></h4>
                 </div>
             </div>  <!-- END TITLE -->
 
@@ -127,11 +127,11 @@
                                             </table>
 
                                             <div class="mt-0">
-                                                <button type="button" class="btn btn-danger mt-3" data-toggle="modal" data-target="#huydonhangdatao">
+                                                <button type="button" class="btn btn-danger mt-3 hvr-buzz" data-toggle="modal" data-target="#huydonhangdatao">
                                                     Hủy đơn hàng này
                                                 </button>
 
-                                                <a href="index.php?page=quanlitonkho" class="btn btn-success mt-3">Xác Nhận Thay Đổi</a>
+                                                <a href="index.php?page=quanlitonkho" class="btn btn-success mt-3 hvr-bounce-out">Xác Nhận Thay Đổi</a>
                                             </div>
 
                                         </div>

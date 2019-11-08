@@ -20,10 +20,10 @@
                 <div class="row">
                     <!-- MENU -->
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3">
-                        <a href="index.php?page=taomoinhaphanphoi" class=" btn btn-success">Tạo nhà phân phối</a>
+                        <a href="index.php?page=taomoinhaphanphoi" class=" btn btn-success hvr-grow-rotate">Tạo nhà phân phối</a>
                     </div>
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3 ">
-                        <button class=" btn btn-secondary text-light" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <button class=" btn btn-secondary text-light hvr-wobble-horizontal" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                             Tìm nhà phân phối
                         </button>
                     </div>  <!-- END MENU -->
@@ -102,8 +102,9 @@
                                 </td>
                                 <td><?php echo $tt->tructhuoc; ?></td>
                                 <td>
-                                    <a href="index.php?page=suanhaphanphoi&id=<?php echo $tt->makhachhang; ?>" class="btn btn-warning">Sửa</a>
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#xemthongtinchitiet" onclick="XemThemThongTin('<?php echo $tt->hovaten ?>','<?php echo $tt->mahopdong;?>', '<?php echo $tt->macuahang;?>', '<?php echo $tt->hethongnhaphanphoi;?>', '<?php echo $tt->danghi;?>', '<?php echo $thongtinadmin->hovaten;?>','<?php echo $tt->ngaytao;?>')">Xem chi tiết</button>
+                                    <a href="index.php?page=suanhaphanphoi&id=<?php echo $tt->makhachhang; ?>" class="btn btn-warning">Sửa</a>
+                                    
                                 </td>
                             </tr>
                         <?php

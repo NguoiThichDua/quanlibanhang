@@ -18,12 +18,59 @@ div .card{
     box-shadow: 0 15px 25px rgba(134, 134, 134, 0.3);
 }
 
+.rotate {
+    animation: rotation 8s infinite linear;
+  }
+  
+  @keyframes rotation {
+    0% {
+        transform: rotate(0); }
+      5% {
+        transform: rotate(5deg); }
+      15% {
+        transform: rotate(-2.5deg); }
+      25% {
+        transform: rotate(2deg); }
+      35% {
+        transform: rotate(-1.5deg); }
+      45% {
+        transform: rotate(1deg); }
+      55% {
+        transform: rotate(-1.5deg); }
+      65% {
+        transform: rotate(2deg); }
+      75% {
+        transform: rotate(-2deg); }
+      85% {
+        transform: rotate(2.5deg); }
+      95% {
+        transform: rotate(-5deg); }
+      100% {
+        transform: rotate(0); }
+  }
+
 .need{
     color: red;
 }
 
 .bg-custom{
     background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card-menu:hover{
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 15px 25px #fff;
+}
+
+.zoom {
+    transition: transform .2s;
+}
+
+.zoom:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
 }
 
 

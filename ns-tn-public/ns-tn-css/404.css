@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather+Sans");
 main {
-  flex-direction: column;
-  font-family: "Merriweather Sans", sans-serif; }
-  main #errorText {
+    flex-direction: column;
+    font-family: "Merriweather Sans", sans-serif; }
+main #errorText {
     font-size: 22px;
     margin: 14px 0; }
-  main #errorLink {
+main #errorLink {
     font-size: 20px;
     padding: 12px;
     border: 1px solid;
@@ -13,10 +13,10 @@ main {
     background-color: transparent;
     text-decoration: none;
     transition: all 0.5s ease-in-out; }
-    main #errorLink:hover, main #errorLink:active {
-      color: #fff;
-      background: #000; }
-  main #g6219 {
+main #errorLink:hover, main #errorLink:active {
+    color: #fff;
+    background: #000; }
+main #g6219 {
     transform-origin: 85px 4px;
     animation: an1 12s 0.5s infinite ease-out; }
 
@@ -47,3 +47,4 @@ main {
     transform: rotate(0); } }
 
 /*# sourceMappingURL=app.css.map */
+

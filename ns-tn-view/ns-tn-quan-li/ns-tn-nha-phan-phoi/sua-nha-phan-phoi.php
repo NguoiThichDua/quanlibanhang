@@ -94,7 +94,7 @@
 
                                 <div class="form-group d-flex justify-content-end">
                                     <a href="index.php?page=quanlinhaphanphoi" class="btn btn-warning mr-3">Hủy bỏ</a>
-                                    <input type="submit" value="Sửa thông tin" class="btn btn-success">
+                                    <input type="submit" value="Sửa thông tin" class="btn btn-success hvr-bounce-out">
                                     </div>
                                 </div>
                             </form>     <!-- END FORM SUA-->

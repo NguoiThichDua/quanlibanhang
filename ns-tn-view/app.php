@@ -1,5 +1,4 @@
 <?php
-    session_start();
     if(isset($_SESSION['admin'])){
       
         ?><div class="mt-3"></div><?php

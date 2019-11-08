@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2019 at 09:01 AM
+-- Generation Time: Nov 08, 2019 at 06:43 PM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -130,10 +130,7 @@ INSERT INTO `donhang` (`madonhang`, `mabill`, `ngaytao`, `ghichu`, `makhachhang`
 (14, '1652480201055', '2019-11-06', '', 11, 1),
 (16, '1652480201055', '2019-11-07', '', 5, 1),
 (17, '1652480201060', '2019-11-07', '', 6, 1),
-(18, '1652480201095', '2019-11-08', '', 12, 1),
-(19, '1652480201060', '2019-11-08', '', 9, 1),
-(20, '1652480201060', '2019-11-08', '', 5, 1),
-(21, '1652480201066', '2019-11-08', '', 5, 1);
+(18, '1652480201095', '2019-11-08', '', 12, 1);
 
 -- --------------------------------------------------------
 
@@ -190,8 +187,8 @@ CREATE TABLE `khachhang` (
   `sodienthoai` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `cmnd` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `diachi` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `capbac` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `tructhuoc` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
+  `capbac` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `tructhuoc` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `mahopdong` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `macuahang` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `hethongnhaphanphoi` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -214,7 +211,8 @@ INSERT INTO `khachhang` (`makhachhang`, `hovaten`, `sodienthoai`, `cmnd`, `diach
 (9, 'Thằng Khách Demo', '0766899366', '54984654984', 'Cần Thơ', '', '', NULL, NULL, NULL, 'chuanghi', 'khachquaduong', 1, NULL, NULL, '2019-11-05'),
 (10, 'Thằng Khách Demo 2', '0766899363', '65498546879', 'Cần Thơ', '', '', NULL, NULL, NULL, 'chuanghi', 'khachquaduong', 1, NULL, NULL, '2019-11-07'),
 (11, 'Nguyễn Nhật Luận', '0948414185', '1954964984', 'Cà Mau', '', '', NULL, NULL, NULL, 'chuanghi', 'khachquaduong', 1, NULL, NULL, '2019-11-06'),
-(12, 'Nguyễn Chí Phương', '0939505817', '654984198', 'Cà Mau', '', '', NULL, NULL, NULL, 'chuanghi', 'khachlaunam', 1, NULL, NULL, '2019-11-08');
+(12, 'Nguyễn Chí Phương', '0939505817', '654984198', 'Cà Mau', '', '', NULL, NULL, NULL, 'chuanghi', 'khachlaunam', 1, NULL, NULL, '2019-11-08'),
+(13, 'aiysfgiav', '54981984984', '546481651', 'igadiyfg', '', '', NULL, NULL, NULL, 'chuanghi', 'khachquaduong', 1, NULL, NULL, '2019-11-08');
 
 --
 -- Indexes for dumped tables
@@ -288,7 +286,7 @@ ALTER TABLE `chitiethanghoahangton`
 -- AUTO_INCREMENT for table `donhang`
 --
 ALTER TABLE `donhang`
-  MODIFY `madonhang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `madonhang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `hanghoa`
@@ -300,13 +298,13 @@ ALTER TABLE `hanghoa`
 -- AUTO_INCREMENT for table `hangton`
 --
 ALTER TABLE `hangton`
-  MODIFY `mahangton` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `mahangton` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `makhachhang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `makhachhang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

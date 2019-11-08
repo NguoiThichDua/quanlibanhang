@@ -4,10 +4,6 @@
         <div class="row">
             <!-- TITLE -->
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
-                <div class="position-absolute" style="z-index: 999; left: 10px">       
-                    <a class="btn btn-outline-brown dangxuat rounded-pill" href="index.php?page=quanlixuatkho">Trở Về</a>
-                </div>
-    
                 <div class="text-center">
                     <h4><strong><b>Sửa Đơn Hàng</b></strong></h4>
                 </div>

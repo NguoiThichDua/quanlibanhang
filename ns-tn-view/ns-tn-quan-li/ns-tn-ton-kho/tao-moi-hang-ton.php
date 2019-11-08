@@ -4,10 +4,11 @@
         <div class="row">
             <!-- TITLE -->
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
-            
-                <div class="position-absolute" style="z-index: 999; left: 10px">       
-                    <a class="btn btn-outline-brown dangxuat rounded-pill" href="index.php?page=quanlitonkho">Trở Về</a>
-                </div>
+                <?php   if(!isset($_GET['id'])){ ?>
+                    <div class="position-absolute" style="z-index: 999; left: 10px">       
+                        <a class="btn btn-outline-brown dangxuat rounded-pill" href="index.php?page=quanlitonkho">Trở Về</a>
+                    </div>
+                <?php }?>
     
                 <div class="text-center">
                     <h4><strong><b>Tạo Mới Đơn Hàng Tồn</b></strong></h4>
@@ -123,7 +124,7 @@
                                             </table>
 
                                             <div class="mt-0">
-                                                <button type="button" class="btn btn-danger mt-3" data-toggle="modal" data-target="#huydonhang">
+                                                <button type="button" class="btn btn-danger mt-3 hvr-buzz btn-huy-don-hang" data-toggle="modal" data-target="#huydonhang">
                                                     Hủy đơn hàng này
                                                 </button>
 

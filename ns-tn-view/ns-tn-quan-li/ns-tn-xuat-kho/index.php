@@ -41,7 +41,7 @@
                         <h6><strong><b>Tìm kiếm</b></strong></h6>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="">
                             <div class="row">
                                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                                     <label for=""><b>Mã bill: </b></label>
@@ -64,10 +64,10 @@
                                     <input type="date" id="ngayketthuctim" onkeyup="TimDonHang()" class="form-control rounded-pill">
                                 </div>  
 
-                                <button class="btn btn-primary mt-3 ml-3" onclick="TimDonHang()">Tìm</button>
+                                <button type="button" class="btn btn-primary mt-3 ml-3" onclick="TimDonHang()">Tìm</button>
                                 <button type="reset" class="btn btn-success mt-3 ml-3" onclick="TimDonHang()">Làm trống ô tìm kiếm</button>
-                            </div>     
-                        </form>      
+                            </div>   
+                        </form>  
                     </div>
                 </div>  <!-- END TIM KIEM -->
             </div>

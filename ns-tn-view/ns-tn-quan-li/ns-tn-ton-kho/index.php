@@ -42,7 +42,7 @@
                         <h6><strong><b>Tìm kiếm</b></strong></h6>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post">
+                        <form action="">
                             <div class="row">
                                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                     <label for=""><b>Nhập tên: </b></label>
@@ -61,10 +61,11 @@
                                     <input type="date" id="ngayketthuctim" onkeyup="TimDonHangTon()" class="form-control rounded-pill">
                                 </div>  
 
-                                <button class="btn btn-primary mt-3 ml-3" onclick="TimDonHangTon()">Tìm</button>
+                                <button type="button" class="btn btn-primary mt-3 ml-3" onclick="TimDonHangTon()">Tìm</button>
                                 <button type="reset" class="btn btn-success mt-3 ml-3" onclick="TimDonHangTon()">Làm trống ô tìm kiếm</button>
-                            </div>           
+                            </div> 
                         </form>
+                       
                     </div>
                 </div>  <!-- END TIM KIEM -->
             </div>

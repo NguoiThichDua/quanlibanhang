@@ -4,10 +4,15 @@
         <div class="row">
             <!-- TITLE -->
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex justify-content-center">
-                <div class="position-absolute" style="z-index: 999; left: 10px">       
-                    <a class="btn btn-outline-brown dangxuat rounded-pill" href="index.php?page=quanlixuatkho">Trở Về</a>
-                </div>
-    
+                <?php
+                      if(!isset($_GET['id'])){ 
+                ?>
+                    <div class="position-absolute" style="z-index: 999; left: 10px">       
+                        <a class="btn btn-outline-brown dangxuat rounded-pill" href="index.php?page=quanlixuatkho">Trở Về</a>
+                    </div>
+                <?php
+                      }
+                ?>
                 <div class="text-center">
                     <h4><strong><b>Tạo Mới Đơn Hàng</b></strong></h4>
                 </div>
@@ -27,9 +32,9 @@
         
                     if($thongtin != NULL){
                         ?>
-                        <marquee behavior="alternate">Bạn đang TẠO đơn hàng cho nhà phân phối: <b><u><?php echo "  " . $thongtin->hovaten;?></u></b></marquee>
-                            <div class="row">
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10">
+                                <font><marquee class="mb-3 text-light" direction="left" style="background:orange; border-radius: 15px; border: #835c3e 2px SOLID">Bạn đang TẠO đơn hàng cho nhà phân phối: <b><u><?php echo "  " . $thongtin->hovaten;?></u></b></marquee></font>
                                     <div class="card bg-custom pb-3 mb-3">
                                         <div class="card-header bg-browns text-light" style="border-radius: 30px 30px 0 0">1. Thêm hàng hóa - Số lượng - Ngày sản xuất</div>
                                         <div class="card-body">
@@ -81,8 +86,8 @@
                                 </div>  <!-- END THEM HANG HOA VA SO LUONG -->
 
                                 <!-- GIO HANG -->
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                                    <div class="card bg-custom">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10">
+                                    <div class="card bg-custom mb-3">
                                         <div class="card-header bg-browns text-light" style="border-radius: 30px 30px 0 0">
                                             2. Giỏ hàng
                                         </div>
@@ -155,7 +160,7 @@
             </div>
 
                 <div class="col-12 col-sm-12 col-md-12 mt-3 d-flex justify-content-center">
-                    <div class="col-md-6">
+                    <div class="col-md-10">
                         <div class="card p-3 bg-custom">
                             <label for=""><b>Thêm đơn hàng: </b></label>
                             <!-- Khi lưu thông tin khách 'qua đường' từ nha-phan-phoi-controller trả về sodienthoai => lấy ra và in ở đây -->
@@ -172,7 +177,7 @@
                
                 <!-- load dữ liệu từ xuat-kho.js để tìm thông tin khách => tạo đơn hàng mới-->
                 <div class="col-12 col-sm-12 col-md-12 mt-3 d-flex justify-content-center">
-                    <div class="col-md-6">
+                    <div class="col-md-10">
                         <div class="" id="thongtinkhachthem">
                     
                         </div>

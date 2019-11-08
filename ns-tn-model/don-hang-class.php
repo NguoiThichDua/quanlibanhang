@@ -58,6 +58,7 @@
 			$list = $donhang->fetchAll(); 
 			return $list;
         }
+
         # tìm đơn hàng có ngày
         public function TimDonHangCoNgay($tenkhach, $sodienthoai, $mabill, $ngaybatdau, $ngayketthuc){
             $donhang = $this->connect->prepare("SELECT khachhang.hovaten, khachhang.sodienthoai, khachhang.diachi, donhang.madonhang, donhang.mabill, donhang.maadmin,donhang.ngaytao, donhang.ghichu FROM donhang, khachhang WHERE donhang.makhachhang = khachhang.makhachhang AND khachhang.hovaten LIKE '%$tenkhach%' AND khachhang.sodienthoai LIKE '%$sodienthoai%' AND donhang.mabill LIKE '%$mabill%' AND donhang.ngaytao <= '$ngayketthuc' AND donhang.ngaytao >= '$ngaybatdau' ORDER BY donhang.ngaytao DESC");
@@ -66,10 +67,9 @@
 			$list = $donhang->fetchAll(); 
 			return $list;
         }
-        
 
-         # lấy tất cả các đơn hàng đã đặt
-         public function LayTatCaDonHang(){
+        # lấy tất cả các đơn hàng đã đặt
+        public function LayTatCaDonHang(){
             $donhang = $this->connect->prepare('SELECT kh.makhachhang, kh.hovaten, kh.sodienthoai, kh.diachi, dh.madonhang, dh.mabill, dh.maadmin,dh.ngaytao, dh.ghichu FROM donhang dh, khachhang kh WHERE kh.makhachhang = dh.makhachhang ORDER BY dh.ngaytao DESC');
             $donhang->setFetchMode(PDO::FETCH_OBJ);
             $donhang->execute();

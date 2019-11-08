@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2019 at 02:43 PM
+-- Generation Time: Nov 08, 2019 at 09:01 AM
 -- Server version: 10.1.40-MariaDB
 -- PHP Version: 7.3.5
 
@@ -63,16 +63,20 @@ CREATE TABLE `chitiethanghoadonhang` (
 --
 
 INSERT INTO `chitiethanghoadonhang` (`machitiethanghoadonhang`, `soluong`, `ngaysanxuat`, `mahanghoa`, `madonhang`) VALUES
-(6, 50, '2019-11-04', 1, 3),
-(7, 30, '2019-11-03', 2, 3),
-(8, 150, '2019-11-04', 3, 4),
-(9, 200, '2019-11-19', 1, 4),
-(10, 500, '2019-11-14', 2, 5),
-(11, 500, '2019-11-05', 3, 5),
-(12, 500, '2019-11-05', 1, 5),
-(15, 999, '2019-11-04', 1, 7),
-(16, 888, '2019-11-06', 2, 7),
-(17, 777, '2019-11-07', 3, 7);
+(10, 50, '2019-11-14', 2, 5),
+(12, 60, '2019-11-05', 1, 5),
+(23, 40, '2019-11-04', 3, 5),
+(24, 55, '2019-11-08', 1, 12),
+(25, 60, '2019-11-01', 2, 12),
+(26, 70, '2019-11-22', 3, 12),
+(27, 50, '2019-11-02', 1, 13),
+(28, 30, '2019-11-01', 2, 13),
+(29, 50, '2019-11-06', 1, 14),
+(30, 100, '2019-11-08', 2, 14),
+(31, 20, '2019-11-04', 1, 16),
+(32, 45, '2019-11-06', 3, 17),
+(33, 20, '2019-11-08', 1, 18),
+(34, 50, '2019-11-07', 3, 18);
 
 -- --------------------------------------------------------
 
@@ -86,6 +90,19 @@ CREATE TABLE `chitiethanghoahangton` (
   `soluong` int(11) NOT NULL,
   `mahangton` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `chitiethanghoahangton`
+--
+
+INSERT INTO `chitiethanghoahangton` (`machitiethanghoahangton`, `mahanghoa`, `soluong`, `mahangton`) VALUES
+(4, 1, 50, 3),
+(5, 2, 10, 3),
+(8, 1, 15, 7),
+(9, 2, 16, 7),
+(10, 1, 100, 8),
+(11, 2, 10, 8),
+(15, 3, 10, 12);
 
 -- --------------------------------------------------------
 
@@ -107,10 +124,16 @@ CREATE TABLE `donhang` (
 --
 
 INSERT INTO `donhang` (`madonhang`, `mabill`, `ngaytao`, `ghichu`, `makhachhang`, `maadmin`) VALUES
-(3, '1652480201050', '2019-11-04', 'Công nợ đơn hàng', 5, 1),
-(4, '1652480201065', '2019-11-04', '', 6, 1),
 (5, '1652480201055', '2019-11-04', 'Đây là demo', 7, 1),
-(7, '1652480201045', '2019-11-04', '', 5, 1);
+(12, '1652480201055', '2019-11-05', '', 5, 1),
+(13, '1652480201060', '2019-11-05', 'Giao gấp', 8, 1),
+(14, '1652480201055', '2019-11-06', '', 11, 1),
+(16, '1652480201055', '2019-11-07', '', 5, 1),
+(17, '1652480201060', '2019-11-07', '', 6, 1),
+(18, '1652480201095', '2019-11-08', '', 12, 1),
+(19, '1652480201060', '2019-11-08', '', 9, 1),
+(20, '1652480201060', '2019-11-08', '', 5, 1),
+(21, '1652480201066', '2019-11-08', '', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -141,8 +164,19 @@ INSERT INTO `hanghoa` (`mahanghoa`, `tenhanghoa`) VALUES
 CREATE TABLE `hangton` (
   `mahangton` int(11) NOT NULL,
   `ngaytao` date NOT NULL,
-  `makhachhang` int(11) NOT NULL
+  `makhachhang` int(11) NOT NULL,
+  `maadmin` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `hangton`
+--
+
+INSERT INTO `hangton` (`mahangton`, `ngaytao`, `makhachhang`, `maadmin`) VALUES
+(3, '2019-11-07', 5, 1),
+(7, '2019-11-07', 11, 1),
+(8, '2019-11-07', 5, 1),
+(12, '2019-11-07', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -174,9 +208,13 @@ CREATE TABLE `khachhang` (
 --
 
 INSERT INTO `khachhang` (`makhachhang`, `hovaten`, `sodienthoai`, `cmnd`, `diachi`, `capbac`, `tructhuoc`, `mahopdong`, `macuahang`, `hethongnhaphanphoi`, `danghi`, `loaikhachhang`, `maadmin`, `ngaysua`, `maadminsua`, `ngaytao`) VALUES
-(5, 'Nguyễn Bình Hồng Sơn', '0766899363', '352389249', 'Cần Thơ', 'nhaphanphoivang', 'Trường Đại học Tây Đô', 'HD-21546546', 'CH-5485485', 'An Giang', 'chuanghi', 'khachlaunam', 1, '2019-11-03', 1, '2019-11-02'),
-(6, 'Lê Trung Nam', '0916524328', '356248954', 'Cần Thơ', 'tongdaili', 'Trường Đại học Cần Thơ', 'HD-21546546', 'CH-548789', 'Vĩnh Long', 'chuanghi', 'khachlaunam', 2, '2019-11-02', 1, '2019-11-02'),
-(7, 'Lê Thanh Thoại', '0939505813', '548348961', 'Cần Thơ', 'giamdockinhdoanh', 'Trường Đại học Nam Cần Thơ', 'HS-5485764', 'CH-548789', 'Vĩnh Long', 'chuanghi', 'khachlaunam', 1, '2019-11-02', 1, '2019-11-02');
+(5, 'Nguyễn Bình Hồng Sơn', '0766899363', '352389249', 'Cần Thơ', 'nhaphanphoivang', 'Trường Đại học Tây Đô', 'HD-21546546', 'CH-5485485', 'An Giang', 'chuanghi', 'khachlaunam', 1, '2019-11-05', 1, '2019-11-02'),
+(6, 'Lê Trung Nam', '0916524328', '356248954', 'Cần Thơ', 'tongdaili', 'Trường Đại học Cần Thơ', 'HD-21546546', 'CH-548789', 'Vĩnh Long', 'chuanghi', 'khachlaunam', 1, '2019-11-02', 1, '2019-11-06'),
+(7, 'Lê Thanh Thoại', '0939505813', '548348961', 'Cần Thơ', 'giamdockinhdoanh', 'Trường Đại học Nam Cần Thơ', 'HS-5485764', 'CH-548789', 'Vĩnh Long', 'chuanghi', 'khachlaunam', 1, '2019-11-02', 1, '2019-11-02'),
+(9, 'Thằng Khách Demo', '0766899366', '54984654984', 'Cần Thơ', '', '', NULL, NULL, NULL, 'chuanghi', 'khachquaduong', 1, NULL, NULL, '2019-11-05'),
+(10, 'Thằng Khách Demo 2', '0766899363', '65498546879', 'Cần Thơ', '', '', NULL, NULL, NULL, 'chuanghi', 'khachquaduong', 1, NULL, NULL, '2019-11-07'),
+(11, 'Nguyễn Nhật Luận', '0948414185', '1954964984', 'Cà Mau', '', '', NULL, NULL, NULL, 'chuanghi', 'khachquaduong', 1, NULL, NULL, '2019-11-06'),
+(12, 'Nguyễn Chí Phương', '0939505817', '654984198', 'Cà Mau', '', '', NULL, NULL, NULL, 'chuanghi', 'khachlaunam', 1, NULL, NULL, '2019-11-08');
 
 --
 -- Indexes for dumped tables
@@ -238,19 +276,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `chitiethanghoadonhang`
 --
 ALTER TABLE `chitiethanghoadonhang`
-  MODIFY `machitiethanghoadonhang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `machitiethanghoadonhang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `chitiethanghoahangton`
 --
 ALTER TABLE `chitiethanghoahangton`
-  MODIFY `machitiethanghoahangton` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `machitiethanghoahangton` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `donhang`
 --
 ALTER TABLE `donhang`
-  MODIFY `madonhang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `madonhang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `hanghoa`
@@ -262,13 +300,13 @@ ALTER TABLE `hanghoa`
 -- AUTO_INCREMENT for table `hangton`
 --
 ALTER TABLE `hangton`
-  MODIFY `mahangton` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `mahangton` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `khachhang`
 --
 ALTER TABLE `khachhang`
-  MODIFY `makhachhang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `makhachhang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

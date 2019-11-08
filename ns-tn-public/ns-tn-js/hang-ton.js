@@ -4,7 +4,19 @@ function SoDienThoaiThemDonHangTon(){
         var sodienthoai = document.getElementById("sodienthoaithemdonhang").value.trim();
       
         $("#thongtinkhachthem").load("ns-tn-view/ns-tn-quan-li/ns-tn-ton-kho/thong-tin-khach-them.php" , {sodienthoai: sodienthoai, sodienthoai: sodienthoai}); 
-   });
+    });
+}
+
+function TimDonHangTon(){
+    $(document).ready(function() {
+        var tenkhachtim = document.getElementById("tenkhachtim").value.trim();
+        var sodienthoaikhachtim = document.getElementById("sodienthoaikhachtim").value.trim();
+        var ngaybatdautim = document.getElementById("ngaybatdautim").value.trim();
+        var ngayketthuctim = document.getElementById("ngayketthuctim").value.trim();
+
+      
+        $("#bangloc").load("ns-tn-view/ns-tn-quan-li/ns-tn-ton-kho/boloc.php" , {tenkhachtim: tenkhachtim, sodienthoaikhachtim: sodienthoaikhachtim, ngaybatdautim: ngaybatdautim, ngayketthuctim: ngayketthuctim}); 
+    });
 }
 
 function SuaThongTinHangHoaDonHangTon(mahangton, makhachhang ,machitiethanghoahangton, soluong){
@@ -27,5 +39,5 @@ function SuaThongTinHangHoaDonHangTon(mahangton, makhachhang ,machitiethanghoaha
 function ChiTietDonHangTon(tenadmin){
     var tenadmintao = tenadmin;
 
-    document.getElementById("nguoitao").value = tenadmintao;
+    document.getElementById("nguoitao").innerHTML = tenadmintao;
 }

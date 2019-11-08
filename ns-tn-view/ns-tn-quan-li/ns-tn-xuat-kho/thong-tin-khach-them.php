@@ -63,11 +63,21 @@
                 }
             }else{
                 ?>
-                    <label for=""><b>Hãy nhập chính xác số điện thoại:</b> </label>
-                    <button class="btn btn-primary rounded-pill" type="button" disabled>
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                        Đang tìm thông tin nhà phân phối
-                    </button>
+                    <label for="" class="text-center">Đang tìm thông tin nhà phân phối </label>
+                    <div class="d-flex justify-content-center">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-danger" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-warning" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
                 <?php
             }
         }else{

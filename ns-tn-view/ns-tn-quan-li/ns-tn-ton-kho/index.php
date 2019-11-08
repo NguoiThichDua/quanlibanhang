@@ -45,22 +45,22 @@
                         <div class="row">
                             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                 <label for=""><b>Nhập tên: </b></label>
-                                <input type="text" id="tenkhachtim" onkeyup="TimDonHang()" class="form-control rounded-pill">
+                                <input type="text" id="tenkhachtim" onkeyup="TimDonHangTon()" class="form-control rounded-pill">
                             </div>    
                             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                 <label for=""><b>Nhập số điện thoại: </b></label>
-                                <input type="number" id="sodienthoaikhachtim" onkeyup="TimDonHang()" class="form-control rounded-pill">
+                                <input type="number" id="sodienthoaikhachtim" onkeyup="TimDonHangTon()" class="form-control rounded-pill">
                             </div>  
                             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                 <label for=""><b>Ngày bắt đầu: </b></label>
-                                <input type="date" id="ngaybatdautim" onkeyup="TimDonHang()" class="form-control rounded-pill">
+                                <input type="date" id="ngaybatdautim" onkeyup="TimDonHangTon()" class="form-control rounded-pill">
                             </div>  
                             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                 <label for=""><b>Ngày kết thúc: </b></label>
-                                <input type="date" id="ngayketthuctim" onkeyup="TimDonHang()" class="form-control rounded-pill">
+                                <input type="date" id="ngayketthuctim" onkeyup="TimDonHangTon()" class="form-control rounded-pill">
                             </div>  
 
-                            <button class="btn btn-primary mt-3 ml-3" onclick="TimDonHang()">Tìm</button>
+                            <button class="btn btn-primary mt-3 ml-3" onclick="TimDonHangTon()">Tìm</button>
                         </div>           
                     </div>
                 </div>  <!-- END TIM KIEM -->
@@ -70,7 +70,7 @@
                  <!-- TABLE -->
                  <div class="table-responsive-lg" id="bangloc">
                     <!-- TABLE -->
-                    <table class="table table-hover table-bordered table-sm table-light text-center">
+                    <table class="table table-hover table-bordered table-sm table-light text-center mb-3">
                         <thead>
                             <tr>
                                 <th scope="col" colspan="5">TẤT CẢ ĐƠN HÀNG TỒN</th>

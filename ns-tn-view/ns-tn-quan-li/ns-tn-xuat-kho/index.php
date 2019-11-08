@@ -24,7 +24,7 @@
                     <!-- MENU -->
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3">
                         <a href="index.php?page=taomoidonhang" class=" btn btn-success hvr-grow-rotate">Tạo đơn hàng mới</a>
-                    </div>
+                </div>
 
                     <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-center mt-3 ">
                         <button class=" btn btn-secondary text-light hvr-wobble-horizontal" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -73,7 +73,7 @@
                 <!-- TABLE -->
                 <div class="table-responsive-lg" id="bangloc">
                     <!-- TABLE -->
-                    <table class="table table-hover table-bordered table-sm table-light text-center">
+                    <table class="table table-hover table-bordered table-sm table-light text-center mb-3">
                         <thead>
                             <tr>
                                 <th scope="col" colspan="7">TẤT CẢ ĐƠN HÀNG</th>
@@ -99,8 +99,8 @@
                         ?>
                             <tr>
                                 <th scope="row" class="font-weight-normal"><?php echo $stt++; ?></th>
-                                <th scope="row" class="font-weight-normal"><?php echo $tt->hovaten; ?></th>
-                                <th scope="row" class="font-weight-normal"><?php echo $tt->sodienthoai; ?></th>
+                                <th scope="row" class="font-weight-normal"><b><?php echo $tt->hovaten; ?><b></th>
+                                <th scope="row" class="font-weight-normal text-danger"><?php echo $tt->sodienthoai; ?></th>
                                 <th scope="row" class="font-weight-normal"><?php echo $tt->diachi; ?></th>
                                 <th scope="row" class="font-weight-normal">
                                     <?php 

@@ -43,7 +43,6 @@
             $capNhat = $this->connect->prepare($cauLenh);
             $capNhat->execute(array($soluong, $machitiethanghoahangton, $makhachhang));
         }
-        
     }
 ?>
 

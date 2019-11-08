@@ -1,3 +1,22 @@
+
+.btn-dangnhap:hover{
+    color: #fff;
+    background:rgb(40, 167, 69);
+    border: 1px solid rgb(40, 167, 69);
+    box-shadow:  0 0 10px rgb(40, 167, 69),0 0 40px rgb(40, 167, 69);
+    /* Độ trễ hiển thị */
+    transition-delay: 1s;
+}
+
+.btn-huy-don-hang:hover{
+    color: #fff;
+    background:#dc3545;
+    border: 1px solid #dc3545;
+    box-shadow:  0 0 10px#dc3545,0 0 40px #dc3545;
+    /* Độ trễ hiển thị */
+    transition-delay: 1s;
+}
+
 .formdangnhap{
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(134, 134, 134, 0.3);

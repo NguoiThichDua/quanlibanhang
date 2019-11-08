@@ -10,12 +10,12 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="">Người tạo: </label>
-                    <input type="text" id="nguoitao" class="form-control rounded-pill" readonly>
+                    <label for="">Người tạo: </label> <b><span id="nguoitao"></span></b>
+                    <!-- <input type="text" id="nguoitao" class="form-control rounded-pill" readonly> -->
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-brown text-light" data-dismiss="modal">Đóng</button>
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-brown text-light" data-dismiss="modal">Đóng</button>
+                </div>
             </div>
         </div>
     </div>

@@ -55,7 +55,7 @@
                 <!-- TABLE -->
                 <div class="table-responsive-lg" id="bangloc">
                     <!-- TABLE -->
-                    <table class="table table-hover table-bordered table-sm table-light text-center">
+                    <table class="table table-hover table-bordered table-sm table-light text-center mb-3">
                         <thead>
                             <tr>
                                 <th scope="col" colspan="8">TẤT CẢ NHÀ PHÂN PHỐI</th>
@@ -83,11 +83,11 @@
                         ?>
                             <tr <?php if($tt->danghi == 'danghi') echo 'style="color: #D8D8D8 "' ?>>
                                 <th scope="row"><?php echo $stt++; ?></th>
-                                <td><?php echo $tt->hovaten ?></td>
-                                <td><?php echo $tt->sodienthoai; ?></td>
-                                <td><?php echo $tt->cmnd; ?></td>
+                                <td><b><?php echo $tt->hovaten ?></b></td>
+                                <td class="text-success"><?php echo $tt->sodienthoai; ?></td>
+                                <td><i><?php echo $tt->cmnd; ?><i></td>
                                 <td><?php echo $tt->diachi; ?></td>
-                                <td>
+                                <td class="text-danger">
                                 <?php 
                                     if($tt->capbac == 'le') echo 'Khách lẻ'; 
                                     else if($tt->capbac == 'si') echo 'Khách sĩ';

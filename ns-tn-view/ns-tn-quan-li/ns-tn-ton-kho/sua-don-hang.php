@@ -34,9 +34,9 @@
         
                     if($thongtin != NULL && $count > 0){
                         ?>
-                        <marquee behavior="alternate">Bạn đang SỬA đơn hàng cho nhà phân phối: <b><u><?php echo "  " . $thongtin->hovaten;?></u></b></marquee>
-                            <div class="row">
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10">
+                                <font><marquee class="mb-3 text-dark" direction="left" style="background:orange; border-radius: 15px; border: #835c3e 2px SOLID">Bạn đang SỬA đơn hàng cho nhà phân phối: <b><u><?php echo "  " . $thongtin->hovaten;?></u></b></marquee></font>
                                     <div class="card bg-custom pb-3 mb-3">
                                         <div class="card-header bg-browns text-light" style="border-radius: 30px 30px 0 0">1. Thêm hàng hóa - Số lượng - Ngày sản xuất</div>
                                         <div class="card-body">
@@ -86,8 +86,8 @@
                                 </div>  <!-- END THEM HANG HOA VA SO LUONG -->
 
                                 <!-- GIO HANG -->
-                                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                                    <div class="card bg-custom">
+                                <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10">
+                                    <div class="card bg-custom mb-3">
                                         <div class="card-header bg-browns text-light" style="border-radius: 30px 30px 0 0">
                                             2. Giỏ hàng
                                         </div>
@@ -127,7 +127,7 @@
                                             </table>
 
                                             <div class="mt-0">
-                                                <button type="button" class="btn btn-danger mt-3 hvr-buzz" data-toggle="modal" data-target="#huydonhangdatao">
+                                                <button type="button" class="btn btn-danger mt-3 hvr-buzz btn-huy-don-hang" data-toggle="modal" data-target="#huydonhangdatao">
                                                     Hủy đơn hàng này
                                                 </button>
 

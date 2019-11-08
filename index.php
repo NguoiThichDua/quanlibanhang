@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="ns-tn-public/ns-tn-css/dang-nhap.css">
     <link rel="stylesheet" href="ns-tn-public/ns-tn-css/quan-li.css">
     <link rel="stylesheet" href="ns-tn-public/ns-tn-css/hover.css">
+    <link rel="stylesheet" href="ns-tn-public/ns-tn-css/loading.css">
 </head>
 <body class="app">
 

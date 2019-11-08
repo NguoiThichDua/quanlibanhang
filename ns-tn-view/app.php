@@ -2,6 +2,8 @@
     session_start();
     if(isset($_SESSION['admin'])){
       
+        ?><div class="mt-3"></div><?php
+
         require "ns-tn-view/ns-tn-include/logo.php";
         require "ns-tn-view/ns-tn-include/message.php";
 

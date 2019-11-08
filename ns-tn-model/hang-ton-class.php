@@ -68,5 +68,23 @@
             $xoa = $this->connect->prepare($cauLenh);
             $xoa->execute(array($mahangton));
         }
+
+        # tìm đơn hàng
+        public function TimHangTonKhongNgay($tenkhach, $sodienthoai){
+            $hangton = $this->connect->prepare("SELECT khachhang.makhachhang, khachhang.hovaten, hangton.mahangton, hangton.ngaytao, hangton.maadmin FROM hangton, khachhang WHERE hangton.makhachhang = khachhang.makhachhang AND khachhang.hovaten LIKE '%$tenkhach%' AND khachhang.sodienthoai LIKE '%$sodienthoai%'  ORDER BY hangton.ngaytao DESC");
+            $hangton->setFetchMode(PDO::FETCH_OBJ);
+			$hangton->execute(array($tenkhach, $sodienthoai));
+			$list = $hangton->fetchAll(); 
+			return $list;
+        }
+
+        # tìm đơn hàng có ngày
+        public function TimHangTonCoNgay($tenkhach, $sodienthoai, $ngaybatdau, $ngayketthuc){
+            $donhang = $this->connect->prepare("SELECT khachhang.makhachhang, khachhang.hovaten, hangton.mahangton, hangton.ngaytao, hangton.maadmin FROM hangton, khachhang WHERE hangton.makhachhang = khachhang.makhachhang AND khachhang.hovaten LIKE '%$tenkhach%' AND khachhang.sodienthoai LIKE '%$sodienthoai%' AND hangton.ngaytao <= '$ngayketthuc' AND hangton.ngaytao >= '$ngaybatdau'  ORDER BY hangton.ngaytao DESC");
+            $donhang->setFetchMode(PDO::FETCH_OBJ);
+			$donhang->execute(array($tenkhach, $sodienthoai, $ngaybatdau, $ngayketthuc));
+			$list = $donhang->fetchAll(); 
+			return $list;
+        }
     }
 ?>

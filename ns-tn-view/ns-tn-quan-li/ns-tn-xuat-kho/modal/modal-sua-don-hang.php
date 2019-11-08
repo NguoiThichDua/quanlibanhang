@@ -22,7 +22,7 @@
 
                     <div class="form-group">
                         <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-brown mr-3" data-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-brown text-light mr-3" data-dismiss="modal">Đóng</button>
                             <button type="submit" class="btn btn-primary">Thay đổi</button>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
 </div>
 
 <!-- Sửa đơn hàng đã tạo -->
-<div class="modal fade" id="suathongtindonhangdatao" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade"  id="suathongtindonhangdatao" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bg-browns text-light">
@@ -56,7 +56,7 @@
 
                     <div class="form-group">
                         <div class="d-flex justify-content-end">
-                            <button type="button" class="btn btn-brown mr-3" data-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-brown text-light mr-3" data-dismiss="modal">Đóng</button>
                             <button type="submit" class="btn btn-primary">Thay đổi</button>
                         </div>
                     </div>

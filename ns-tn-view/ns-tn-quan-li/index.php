@@ -21,11 +21,11 @@
                 <a href="index.php?page=quanlixuatkho" class="w-100 text-decoration-none">
                     <div class="card mb-3 border border-white card-index-quanli card-1 bg-custom card-menu">
                         <div class="d-flex justify-content-center ">
-                            <img src="ns-tn-public/ns-tn-images/default/QLXK.png" style="height: 270px; padding:50px" alt="" srcset="" width="" class="img-quan-li card-img-top">
+                            <img src="ns-tn-public/ns-tn-images/default/analytics.png" style="height: 270px; width:270px; padding:50px" alt="" srcset="" width="" class="img-quan-li card-img-top">
                         </div>
                       
                         <div class="card-body">
-                            <h3 class="card-title text-center text-dark title-qlad"><strong><b>QUẢN LÍ XUẤT KHO</b></strong></h3>
+                            <h3 class="card-title text-center text-browns title-qlad"><strong><b><i>QUẢN LÍ XUẤT KHO</i></b></strong></h3>
                         </div>
                     </div>
                 </a>
@@ -36,11 +36,11 @@
                 <a href="index.php?page=quanlinhaphanphoi" class="w-100 text-decoration-none">
                     <div class="card mb-3 border border-white card-index-quanli bg-custom card-menu blur-menu">
                         <div class="d-flex justify-content-center ">
-                            <img src="ns-tn-public/ns-tn-images/default/QLHTPP.png" style="height: 270px; padding:50px" alt="" srcset="" width="" class="img-quan-li card-img-top">
+                            <img src="ns-tn-public/ns-tn-images/default/guests.png" style="height: 270px; width:270px;padding:50px" alt="" srcset="" width="" class="img-quan-li card-img-top">
                         </div>
                       
                         <div class="card-body">
-                            <h3 class="card-title text-center text-dark title-qlad"><strong><b>Q.LÍ NHÀ PHÂN PHỐI</b></strong></h3>
+                            <h3 class="card-title text-center text-browns title-qlad"><strong><b><i>Q.LÍ NHÀ PHÂN PHỐI</i></b></strong></h3>
                         </div>
                     </div>
                 </a>
@@ -51,11 +51,11 @@
                 <a href="index.php?page=quanlitonkho" class="w-100 text-decoration-none">
                     <div class="card mb-3 border border-white card-index-quanli bg-custom card-menu">
                         <div class="d-flex justify-content-center">
-                            <img src="ns-tn-public/ns-tn-images/default/QLTK.png" style="height: 270px; padding:50px" alt="" srcset="" width="" class="img-quan-li card-img-top">
+                            <img src="ns-tn-public/ns-tn-images/default/storage.png" style="height: 270px; width:270px;padding:50px" alt="" srcset="" width="" class="img-quan-li card-img-top">
                         </div>
                       
                         <div class="card-body">
-                            <h3 class="card-title text-center text-dark title-qlad"><strong><b>QUẢN LÍ TỒN KHO</b></strong></h3>
+                            <h3 class="card-title text-center text-browns title-qlad"><strong><b><i>QUẢN LÍ TỒN KHO</i></b></strong></h3>
                         </div>
                     </div>
                 </a>

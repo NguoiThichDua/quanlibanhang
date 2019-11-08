@@ -16,7 +16,7 @@
             </div>  <!-- END TITLE -->
               
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mt-3">
-                <div class="card p-3 form-them-khach bg-custom">
+                <div class="card p-3 form-them-khach bg-custom mb-3">
 
                 <h6 class="d-flex justify-content-center text-danger mt-2 mb-2 w-100" id="showthongtinsodienthoai"></h6>
                     <!-- FORM THEM -->

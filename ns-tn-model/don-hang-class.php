@@ -70,7 +70,7 @@
 
         # lấy tất cả các đơn hàng đã đặt
         public function LayTatCaDonHang(){
-            $donhang = $this->connect->prepare('SELECT kh.makhachhang, kh.hovaten, kh.sodienthoai, kh.diachi, dh.madonhang, dh.mabill, dh.maadmin,dh.ngaytao, dh.ghichu FROM donhang dh, khachhang kh WHERE kh.makhachhang = dh.makhachhang ORDER BY dh.ngaytao DESC');
+            $donhang = $this->connect->prepare('SELECT kh.makhachhang, kh.hovaten, kh.sodienthoai, kh.diachi, dh.madonhang, dh.mabill, dh.maadmin, dh.ngaytao, dh.ghichu FROM donhang dh, khachhang kh WHERE kh.makhachhang = dh.makhachhang ORDER BY dh.ngaytao DESC');
             $donhang->setFetchMode(PDO::FETCH_OBJ);
             $donhang->execute();
             $listdonhang = $donhang->fetchAll();

@@ -18,7 +18,6 @@
                     $mabill = trim($_POST['mabill']);
                     $ngaytao = date("Y-m-d");
                     $ghichu = trim($_POST['ghichu']);
-                    
 
                     if(strlen($maadmin) < 0){
                         # không lấy được mã admin

@@ -22,6 +22,8 @@
                     <div class="form-control rounded-pill" id="xem_tenadmin" readonly></div>
                     <label for=""><b>Ngày tạo:</b></label>
                     <div class="form-control rounded-pill" id="xem_ngaytao" readonly></div>
+                    <label for=""><b>Ngày sửa:(ngày cập nhật thông tin)</b></label>
+                    <div class="form-control rounded-pill" id="xem_ngaysua" readonly></div>
                 </div>
             </div>
             <div class="modal-footer">

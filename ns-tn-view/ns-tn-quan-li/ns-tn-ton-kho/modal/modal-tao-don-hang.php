@@ -14,6 +14,11 @@
                         <input type="text" name="makhachhang" value="<?php echo $thongtin->makhachhang; ?>" class="form-control rounded-pill d-none" readonly>
 
                         Bạn muốn tạo đơn hàng tồn cho nhà phân phối <strong><?php echo $thongtin->hovaten; ?></strong> ?
+
+                        <div class="form-group">
+                            <label for="">Ngày kiểm kê:</label>
+                            <input type="date" name="ngaytao" title="Không được bỏ trống" class="form-control rounded-pill" required>
+                        </div>
                     </div>
 
                     <div class="d-flex justify-content-end">

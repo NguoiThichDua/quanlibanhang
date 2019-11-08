@@ -1,5 +1,6 @@
 /* Xem thêm những thông tin của nhà phân phối */
-function XemThemThongTin(hovaten, mahopdong, macuahang, hethongnhaphanphoi, danghi, tenadmin,ngaytao){
+function XemThemThongTin(hovaten, mahopdong, macuahang, hethongnhaphanphoi, danghi, tenadmin,ngaytao, ngaysua){
+   
     var xem_hovaten = hovaten;
     var xem_mahopdong = mahopdong;
     var xem_macuahang = macuahang;
@@ -7,6 +8,7 @@ function XemThemThongTin(hovaten, mahopdong, macuahang, hethongnhaphanphoi, dang
     var xem_danghi = danghi;
     var xem_tenadmin = tenadmin;
     var xem_ngaytao = ngaytao;
+    var xem_ngaysua = ngaysua;
 
     if(xem_danghi == "chuanghi"){
         xem_danghi = "Chưa nghĩ";
@@ -21,6 +23,9 @@ function XemThemThongTin(hovaten, mahopdong, macuahang, hethongnhaphanphoi, dang
     document.getElementById("xem_danghi").innerHTML = xem_danghi;
     document.getElementById("xem_tenadmin").innerHTML = xem_tenadmin;
     document.getElementById("xem_ngaytao").innerHTML = xem_ngaytao;
+    document.getElementById("xem_ngaysua").innerHTML = xem_ngaysua;
+
+    
 }
 
 function TimKhachHang(){

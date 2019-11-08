@@ -12,9 +12,9 @@
 
         switch ($yeucau) {
             case 'taomoidonhang':
-                if(isset($_POST['makhachhang'])){
+                if(isset($_POST['makhachhang']) && $_POST['ngaytao']){
                     $makhachhang = $_POST['makhachhang'];
-                    $ngaytao = date("Y-m-d");
+                    $ngaytao = $_POST['ngaytao'];
 
                     if(isset($_SESSION['admin'])){
                         $tentaikhoan = $_SESSION['admin'];

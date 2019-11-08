@@ -73,7 +73,7 @@
             break;
             case 'themnhaphanphoi':
                 # nhận các thông tin được post qua có đầy đủ không
-                if(isset($_POST['hovaten']) && isset($_POST['sodienthoai']) && isset($_POST['diachi']) && isset($_POST['cmnd']) && isset($_POST['tructhuoc']) && isset($_POST['capbac'])){
+                if(isset($_POST['ngaytao']) || isset($_POST['hovaten']) && isset($_POST['sodienthoai']) && isset($_POST['diachi']) && isset($_POST['cmnd']) && isset($_POST['tructhuoc']) && isset($_POST['capbac'])){
                     # gán giá trị
                     $hovaten = trim($_POST['hovaten']);
                     $sodienthoai = trim($_POST['sodienthoai']);
@@ -81,6 +81,7 @@
                     $cmnd = trim($_POST['cmnd']);
                     $tructhuoc = trim($_POST['tructhuoc']);
                     $capbac = trim($_POST['capbac']);
+                    $ngaytao = trim($_POST['ngaytao']);
 
                     # kiểm tra dữ liệu rỗng
                     if(strlen($hovaten) <= 0 || strlen($sodienthoai) <= 0 || strlen($diachi) <= 0 || strlen($cmnd) <= 0 || strlen($tructhuoc) <= 0 || strlen($capbac) <= 0){
@@ -92,7 +93,6 @@
                         $hethongnhaphanphoi = trim($_POST['hethongnhaphanphoi']);
 
                         $loaikhachhang = 'khachlaunam';
-                        $ngaytao = date("Y-m-d");
 
                         if(isset($_SESSION['admin'])){
                             $tentaikhoan = $_SESSION['admin'];
@@ -119,7 +119,7 @@
                 }
             break;
             case 'suanhaphanohoi':
-                if(isset($_POST['makhachhang']) && isset($_POST['danghi']) && isset($_POST['hovaten']) && isset($_POST['sodienthoai']) && isset($_POST['diachi']) && isset($_POST['cmnd']) && isset($_POST['tructhuoc']) && isset($_POST['capbac'])){         
+                if(isset($_POST['ngaysua']) && isset($_POST['makhachhang']) && isset($_POST['danghi']) && isset($_POST['hovaten']) && isset($_POST['sodienthoai']) && isset($_POST['diachi']) && isset($_POST['cmnd']) && isset($_POST['tructhuoc']) && isset($_POST['capbac'])){         
                     
                     # gán giá trị
                     $makhachhang = trim($_POST['makhachhang']);
@@ -131,6 +131,7 @@
                     $tructhuoc = trim($_POST['tructhuoc']);
                     $capbac = trim($_POST['capbac']);
                     $danghi = trim($_POST['danghi']);
+                    $ngaysua = $_POST['ngaysua'];
 
                     if(strlen($hovaten) <= 0 || strlen($sodienthoai) <= 0 || strlen($diachi) <= 0 || strlen($cmnd) <= 0 || strlen($tructhuoc) <= 0 || strlen($capbac) <= 0){
                         header("Location: ../index.php?page=suanhaphanphoi&id=$makhachhang&ketqua=thongtinrong");
@@ -141,7 +142,6 @@
                         $hethongnhaphanphoi = trim($_POST['hethongnhaphanphoi']);
 
                         $loaikhachhang = 'khachlaunam';
-                        $ngaysua = date("Y-m-d");
 
                         if(isset($_SESSION['admin'])){
                             $tentaikhoan = $_SESSION['admin'];

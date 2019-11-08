@@ -55,6 +55,10 @@
                                 <option value="giamdockinhdoanh">Giám đốc kinh doanh</option>
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for=""><b>Ngày tạo:</b> (<span class="need">*</span>)</label>
+                            <input type="date" name="ngaytao" class="form-control rounded-pill" title="Không được bỏ rỗng trường này" required>
+                        </div>
                 </div>
             </div>
 

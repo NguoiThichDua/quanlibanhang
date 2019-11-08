@@ -67,6 +67,10 @@
                                         <option value="giamdockinhdoanh" <?php if($thongtin->capbac == 'giamdockinhdoanh') echo 'selected'?>>Giám đốc kinh doanh</option>
                                     </select>
                                 </div>
+                                <div class="form-group">
+                                    <label for=""><b>Ngày sửa:</b> (<span class="need">*</span>)</label>
+                                    <input type="date" name="ngaysua" class="form-control rounded-pill" title="Không được bỏ rỗng trường này" required>
+                                </div>
                         </div>
                     </div>
 

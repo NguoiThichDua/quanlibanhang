@@ -128,7 +128,7 @@
                                                     Hủy đơn hàng này
                                                 </button>
 
-                                                <a href="index.php?page=quanlitonkho" class="btn btn-success mt-3">Xác Nhận Tạo</a>
+                                                <a href="index.php?page=quanlitonkho" class="btn btn-success mt-3 hvr-bounce-out">Xác Nhận Tạo</a>
                                                        
                                             </div>
                                         </div>
